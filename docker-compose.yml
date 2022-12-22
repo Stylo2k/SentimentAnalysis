@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  textblob:
+    build:
+      context: ./textblob
+      args:
+        HOST: ${HOST}
+        TEXT_BLOB_PORT: ${TEXT_BLOB_PORT}
+    ports:
+      - ${TEXT_BLOB_PORT?:}:${TEXT_BLOB_PORT?:}
+      - ${DASHBOARD_PORT?:}:${DASHBOARD_PORT?:}
+    volumes:
+      - ./textblob:/app
+  # todo: add more
+    
+    
