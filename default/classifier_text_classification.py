@@ -1,4 +1,3 @@
-# File name: serve_deployment.py
 from starlette.requests import Request
 
 import ray
