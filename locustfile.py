@@ -1,8 +1,6 @@
-# File name: model_client.py
-import requests
+from locust import task, between, HttpUser
 
-
-english_text =  {
+DATA =  {
  'text' : [
     "The food was allright",
     "The food was great",
@@ -16,9 +14,9 @@ english_text =  {
     'classifier' : 'text_blob'
 }
 
-# english_text = "I would pay everything I own for a meal there "
+class TextBlob(HttpUser):
+    wait_time = between(1, 5)
 
-response = requests.post("http://127.0.0.1:8000/se", json=english_text)
-restext = response.text
-
-print(restext)
+    @task
+    def main(self):
+        self.client.post("/", json=DATA)

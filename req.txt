@@ -1,0 +1,6 @@
+pip install ray[serve]
+pip install requests
+pip install torch
+pip install transformers
+pip install textblob
+pip install vader
