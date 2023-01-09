@@ -1,20 +1,19 @@
 from classifier import Classifier
 from starlette.requests import Request
-from typing import List
 
-import ray
 from ray import serve
 from fastapi import FastAPI
-from textblob import TextBlob
+
+import stanza
 
 app = FastAPI()
 
 import re
 
 @serve.deployment
-class TextBlobClassifier(Classifier):
-    def __init__(self):
-        self.model = TextBlob
+class StanzaClassifier(Classifier):
+    def __init__(self, model):
+        self.model = model
     '''
     TextBlob takes as input one single sentence at a time
         - we classifiy the sentence by calling the TextBlob class
@@ -22,16 +21,25 @@ class TextBlobClassifier(Classifier):
         - If the polarity is 0 then neutral, > 0 positive else negative
     '''
     def classify(self, text : str):
-        polarity = self.model(text).sentiment.polarity
+        doc = self.model(text)
+        sentiment = 0
+        size = len(doc.sentences)
+        # Same concept as in the Issues notebook. We average out the sentiment over all sentences in a document.
+        for i, sentence in enumerate(doc.sentences):
+            sentiment += sentence.sentiment
+
+        sentiment = sentiment / size
+
+        polarity = round(sentiment, 0)
         
         response = {'text' : text, 'sentiment' : ''}
         
-        if polarity > 0:
-            response['sentiment'] = "Positive"
-        elif polarity == 0:
+        if polarity == 0:
+            response['sentiment'] = "Negative"
+        elif polarity == 1:
             response['sentiment'] = "Neutral"
         else:
-            response['sentiment'] = "Negative"
+            response['sentiment'] = "Positive"
         
         return response
 
@@ -40,7 +48,7 @@ class TextBlobClassifier(Classifier):
         return self.classify(text)
 
 
-class TextBlobPreProcessor:
+class StanzaPreProcessor:
     def __init__(self):
         pass
 
@@ -63,7 +71,7 @@ class TextBlobPreProcessor:
 
 @serve.deployment
 @serve.ingress(app)
-class TextBlobDeployment:
+class StanzaDeployment:
     def __init__(self, preprocessor, classifier):
         self.preprocessor = preprocessor
         self.classifier = classifier
@@ -73,10 +81,11 @@ class TextBlobDeployment:
         ref = await self.classifier.classify.remote(preprocessed_text)
         return await ref
 
-    @app.post("/textblob")
+    @app.post("/stanza")
     async def call(self, http_request: Request):
         text: str = await http_request.json()
         return self.classify(text)
 
-
-text_blob = TextBlobDeployment.bind(TextBlobPreProcessor(), TextBlobClassifier.bind())
+# stanza.download('en')
+model = stanza.Pipeline(lang='en', processors='tokenize,sentiment')
+stanza = StanzaDeployment.bind(StanzaPreProcessor(), StanzaClassifier.bind(model))

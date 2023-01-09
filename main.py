@@ -1,5 +1,3 @@
-import re
-import ray
 from ray import serve
 from starlette.requests import Request
 
@@ -10,11 +8,15 @@ from pydantic import BaseModel
 
 # import "textblob" from the file inside the textblob folder
 import textblob_classifier.classifier as tb
+import vader_classifier.classifier as vd
+import stanza_classifier.classifier as sc
 
 app = FastAPI()
 
 class Classifiers(Enum):
     text_blob = 'text_blob'
+    vader = 'vader'
+    stanza = 'stanza'
 
 
 class SeRequest(BaseModel):
@@ -37,8 +39,8 @@ class SeRequest(BaseModel):
 class SentimentAnalysis:
     classifiers : Dict = {}
     
-    def __init__(self, textblob_classifier):
-        self.classifiers['text_blob'] = textblob_classifier
+    def __init__(self, classifiers : Dict):
+        self.classifiers = classifiers
 
     async def classify_text(self, classifier, text : str):
         results = []
@@ -50,12 +52,17 @@ class SentimentAnalysis:
     @app.post("/")
     async def classify_list_text(self, se_request: SeRequest):
         request = se_request.dict()
-        classifier = request.get('classifier', None).value
+        classifier = request.get('classifier', None)
         text = request.get('text', None)
         classifier = self.classifiers.get(classifier, None)
         return await self.classify_text(classifier, text)
 
 
-text_blob = tb.TextBlobDeployment.bind(tb.TextBlobPreProcessor(), tb.TextBlobClassifier.bind())
 
-sentiment_analysis = SentimentAnalysis.bind(text_blob)
+
+sentiment_analysis = SentimentAnalysis.bind(
+    {
+        Classifiers.text_blob : tb.text_blob,
+        Classifiers.vader : vd.vader,
+        # Classifiers.stanza : sc.stanza
+    })

@@ -1,6 +1,6 @@
 # File name: model_client.py
 import requests
-
+import json
 
 english_text =  {
  'text' : [
@@ -19,6 +19,11 @@ english_text =  {
 # english_text = "I would pay everything I own for a meal there "
 
 response = requests.post("http://127.0.0.1:8000/se", json=english_text)
-restext = response.text
 
-print(restext)
+print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("textblob.json", "w"))
+
+english_text['classifier'] = 'vader'
+
+response = requests.post("http://127.0.0.1:8000/se", json=english_text)
+
+print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("vader.json", "w"))

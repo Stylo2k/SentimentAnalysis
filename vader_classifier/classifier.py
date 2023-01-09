@@ -1,20 +1,19 @@
 from classifier import Classifier
 from starlette.requests import Request
-from typing import List
-
 import ray
 from ray import serve
 from fastapi import FastAPI
-from textblob import TextBlob
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 app = FastAPI()
 
 import re
 
 @serve.deployment
-class TextBlobClassifier(Classifier):
+class VaderClassifier(Classifier):
     def __init__(self):
-        self.model = TextBlob
+        self.model = SentimentIntensityAnalyzer()
     '''
     TextBlob takes as input one single sentence at a time
         - we classifiy the sentence by calling the TextBlob class
@@ -22,16 +21,16 @@ class TextBlobClassifier(Classifier):
         - If the polarity is 0 then neutral, > 0 positive else negative
     '''
     def classify(self, text : str):
-        polarity = self.model(text).sentiment.polarity
+        polarity = self.model.polarity_scores(text)
         
         response = {'text' : text, 'sentiment' : ''}
         
-        if polarity > 0:
+        if polarity['compound'] >= 0.05 :
             response['sentiment'] = "Positive"
-        elif polarity == 0:
-            response['sentiment'] = "Neutral"
-        else:
+        elif polarity['compound'] <= - 0.05 :
             response['sentiment'] = "Negative"
+        else :
+            response['sentiment'] = "Neutral"
         
         return response
 
@@ -40,7 +39,7 @@ class TextBlobClassifier(Classifier):
         return self.classify(text)
 
 
-class TextBlobPreProcessor:
+class VaderPreProcessor:
     def __init__(self):
         pass
 
@@ -63,7 +62,7 @@ class TextBlobPreProcessor:
 
 @serve.deployment
 @serve.ingress(app)
-class TextBlobDeployment:
+class VaderDeployment:
     def __init__(self, preprocessor, classifier):
         self.preprocessor = preprocessor
         self.classifier = classifier
@@ -73,10 +72,10 @@ class TextBlobDeployment:
         ref = await self.classifier.classify.remote(preprocessed_text)
         return await ref
 
-    @app.post("/textblob")
+    @app.post("/vader")
     async def call(self, http_request: Request):
         text: str = await http_request.json()
         return self.classify(text)
 
 
-text_blob = TextBlobDeployment.bind(TextBlobPreProcessor(), TextBlobClassifier.bind())
+vader = VaderDeployment.bind(VaderPreProcessor(), VaderClassifier.bind())
