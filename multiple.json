@@ -1,0 +1,66 @@
+[
+    {
+        "sentiment": "Neutral",
+        "text": "The food was allright"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "The food was allright"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "The food was great"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "The food was great"
+    },
+    {
+        "sentiment": "Negative",
+        "text": "The food was terrible"
+    },
+    {
+        "sentiment": "Negative",
+        "text": "The food was terrible"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "The food was amazing"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "The food was amazing"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "that was the best food Ive ever had"
+    },
+    {
+        "sentiment": "Positive",
+        "text": "that was the best food Ive ever had"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "I would never eat there again"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "I would never eat there again"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "I would eat there every day if I could"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "I would eat there every day if I could"
+    },
+    {
+        "sentiment": "Neutral",
+        "text": "I would pay 100 for a meal there"
+    },
+    {
+        "sentiment": "Negative",
+        "text": "I would pay 100 for a meal there"
+    }
+]

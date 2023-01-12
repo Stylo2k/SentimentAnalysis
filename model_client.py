@@ -27,3 +27,13 @@ english_text['classifier'] = 'vader'
 response = requests.post("http://127.0.0.1:8000/se", json=english_text)
 
 print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("vader.json", "w"))
+
+del english_text['classifier']
+english_text['classifiers'] = ['text_blob', 'vader']
+
+response = requests.post("http://127.0.0.1:8000/se/multiple", json=english_text)
+
+print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("multiple.json", "w"))
+
+response = requests.post("http://127.0.0.1:8000/se/compare", json=english_text)
+print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("compare.json", "w"))

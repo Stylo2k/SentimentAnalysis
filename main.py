@@ -1,3 +1,4 @@
+from filecmp import cmp
 from ray import serve
 from starlette.requests import Request
 
@@ -18,6 +19,11 @@ class Classifiers(Enum):
     vader = 'vader'
     stanza = 'stanza'
 
+class Sentiment(Enum):
+    natural  = 'natural'
+    positive = 'positive'
+    negative = 'negative'
+
 
 class SeRequest(BaseModel):
     classifier: Classifiers
@@ -34,6 +40,25 @@ class SeRequest(BaseModel):
             }
         }
 
+class MulRequest(BaseModel):
+    classifiers : List[Classifiers]
+    text : List[str]
+
+    class Config:
+        schema_example = {
+            "example" : {
+                "classifiers" : ["text_blob", "vader"],
+                "text" : [
+                    "The food was allright",
+                    "The food was great"
+                ]
+            }
+        }
+
+class CmpRequest(BaseModel):
+    classifiers : List[Classifiers]
+    text : List[str]
+
 @serve.deployment(route_prefix="/se")
 @serve.ingress(app)
 class SentimentAnalysis:
@@ -41,12 +66,22 @@ class SentimentAnalysis:
     
     def __init__(self, classifiers : Dict):
         self.classifiers = classifiers
+    
+    async def classify_sentence(self, classifier, sentence):
+        return await classifier.classify.remote(sentence)
 
-    async def classify_text(self, classifier, text : str):
+    async def classify_text(self, classifiers , text : str):
         results = []
+        if not isinstance(classifiers, List):
+            classifiers = [classifiers]
+        
         for sentence in text:
-            ref = await classifier.classify.remote(sentence)
-            results.append(await ref)
+            result = {}
+            for classifier in classifiers:
+                ref = await self.classify_sentence(classifier, sentence)
+                name = self.get_classifier_name(self.classifiers, classifier).value
+                result[name] = await ref
+            results.append(result)
         return results
     
     @app.post("/")
@@ -57,7 +92,39 @@ class SentimentAnalysis:
         classifier = self.classifiers.get(classifier, None)
         return await self.classify_text(classifier, text)
 
+    @app.post("/multiple")
+    async def multiple_list_text(self, mul_request : MulRequest):
+        request = mul_request.dict()
+        classifiers = request.get('classifiers', None)
+        text = request.get('text', None)
+        results = {}
+        ref_classifiers = []
+        for classifier in classifiers:
+            ref_classifiers.append(self.classifiers.get(classifier, None))
+        
+        results = await self.classify_text(ref_classifiers, text)
 
+        return results
+
+    @app.post('/compare')
+    async def compare_list_text(self, cmp_request : CmpRequest):
+        request = cmp_request.dict()
+        classifiers = request.get('classifiers', None)
+        text = request.get('text', None)
+        results = {}
+        ref_classifiers = []
+        for classifier in classifiers:
+            ref_classifiers.append(self.classifiers.get(classifier, None))
+        
+        results = await self.classify_text(ref_classifiers, text)
+        
+        return results
+    
+    def get_classifier_name(self, d, val):
+        keys = [k for k, v in d.items() if v == val]
+        if keys:
+            return keys[0]
+        return None
 
 
 sentiment_analysis = SentimentAnalysis.bind(
