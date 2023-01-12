@@ -1,4 +1,13 @@
-{"text_blob" :     {
-    "sentiment": "Positive",
-    "text": "that was the best food Ive ever had"
-}}
+{
+    "text" : [
+       {"sentence" : "The food was allright", "sentiment" : "Positive"},
+       {"sentence" : "The food was great", "sentiment" : "Positive"},
+       {"sentence" : "The food was terrible", "sentiment" : "Positive"},
+       {"sentence" : "The food was amazing", "sentiment" : "Positive"},
+       {"sentence" : "that was the best food I've ever had", "sentiment" : "Positive"},
+       {"sentence" : "I would never eat there again", "sentiment" : "Positive"},
+       {"sentence" : "I would eat there every day if I could", "sentiment" : "Positive"},
+       {"sentence" : "I would pay $100 for a meal there", "sentiment" : "Positive"}
+   ],
+       "classifiers" : ["text_blob", "vader"]
+   }

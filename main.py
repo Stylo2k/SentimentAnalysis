@@ -20,10 +20,14 @@ class Classifiers(Enum):
     stanza = 'stanza'
 
 class Sentiment(Enum):
-    natural  = 'natural'
-    positive = 'positive'
-    negative = 'negative'
-
+   @classmethod
+   def _missing_(cls, value):
+      for member in cls:
+         if member.value == value.lower():
+            return member
+   natural = 'neutral'
+   positive = 'positive'
+   negative = 'negative'
 
 class SeRequest(BaseModel):
     classifier: Classifiers
@@ -55,9 +59,13 @@ class MulRequest(BaseModel):
             }
         }
 
+class LabeledText(BaseModel):
+    sentence : str
+    sentiment : Sentiment
+
 class CmpRequest(BaseModel):
     classifiers : List[Classifiers]
-    text : List[str]
+    text : List[LabeledText]
 
 @serve.deployment(route_prefix="/se")
 @serve.ingress(app)
@@ -76,14 +84,41 @@ class SentimentAnalysis:
             classifiers = [classifiers]
         
         for sentence in text:
-            result = {}
-            for classifier in classifiers:
-                ref = await self.classify_sentence(classifier, sentence)
-                name = self.get_classifier_name(self.classifiers, classifier).value
-                result[name] = await ref
+            result = None
+            if len(classifiers) > 1:
+                result = await self.classify_mul_classifiers(classifiers, sentence)
+            elif len(classifiers) == 1:
+                result = await self.classify_sentence(classifiers[0], sentence)
+                result = await result
+            else:
+                raise Exception("No classifiers provided")
             results.append(result)
         return results
     
+    async def classify_mul_classifiers(self, classifiers, sentence):
+            result = {}
+            for classifier in classifiers:
+                ref = await self.classify_sentence(classifier, sentence)
+                name = self.get_classifier_name(self.classifiers, classifier)
+                result[name] = await ref
+            return result
+    
+    async def compare_text(self, classifiers, text : List[LabeledText]):
+        results = []
+        for entry in text:
+            sentence = entry['sentence']
+            sentiment = entry['sentiment'].value.lower()
+            comparison = {}
+            for classifier in classifiers:
+                ref = await self.classify_sentence(classifier, sentence)
+                ref = await ref
+                name = self.get_classifier_name(self.classifiers, classifier)
+                sentiment_pre = ref.get('sentiment', '').lower()
+                comparison[name] =  { 'expected_sentiment' : sentiment, 'predicted_sentiment' : sentiment_pre, 'correct_prediction': sentiment_pre == sentiment}
+            results.append(comparison)
+        return results
+            
+
     @app.post("/")
     async def classify_list_text(self, se_request: SeRequest):
         request = se_request.dict()
@@ -110,20 +145,19 @@ class SentimentAnalysis:
     async def compare_list_text(self, cmp_request : CmpRequest):
         request = cmp_request.dict()
         classifiers = request.get('classifiers', None)
-        text = request.get('text', None)
+        text : List[LabeledText] = request.get('text', None)
         results = {}
         ref_classifiers = []
         for classifier in classifiers:
             ref_classifiers.append(self.classifiers.get(classifier, None))
         
-        results = await self.classify_text(ref_classifiers, text)
-        
+        results = await self.compare_text(ref_classifiers, text)
         return results
     
     def get_classifier_name(self, d, val):
         keys = [k for k, v in d.items() if v == val]
         if keys:
-            return keys[0]
+            return keys[0].value
         return None
 
 
