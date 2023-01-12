@@ -1,4 +1,5 @@
 from filecmp import cmp
+from unittest import result
 from ray import serve
 from starlette.requests import Request
 
@@ -6,6 +7,8 @@ from enum import Enum
 from fastapi import FastAPI
 from typing import Dict, List
 from pydantic import BaseModel
+
+from sklearn.metrics import confusion_matrix
 
 # import "textblob" from the file inside the textblob folder
 import textblob_classifier.classifier as tb
@@ -63,9 +66,30 @@ class LabeledText(BaseModel):
     sentence : str
     sentiment : Sentiment
 
+    class Config:
+        schema_example = {
+            "example" : {
+                "sentence" : "The food was all right",
+                "sentiment" : "neutral"
+            }
+        }
+
 class CmpRequest(BaseModel):
     classifiers : List[Classifiers]
     text : List[LabeledText]
+
+    class Config:
+        schema_example = {
+            "example" : {
+                "classifiers" : ["text_blob", "vader"],
+                "text" : [
+                    {
+                        "sentence" : "The food was all right",
+                        "sentiment" : "neutral"
+                    }
+                ]
+            }
+        }
 
 @serve.deployment(route_prefix="/se")
 @serve.ingress(app)
@@ -105,6 +129,9 @@ class SentimentAnalysis:
     
     async def compare_text(self, classifiers, text : List[LabeledText]):
         results = []
+        predicted = []
+        expected = []
+
         for entry in text:
             sentence = entry['sentence']
             sentiment = entry['sentiment'].value.lower()
@@ -115,7 +142,13 @@ class SentimentAnalysis:
                 name = self.get_classifier_name(self.classifiers, classifier)
                 sentiment_pre = ref.get('sentiment', '').lower()
                 comparison[name] =  { 'expected_sentiment' : sentiment, 'predicted_sentiment' : sentiment_pre, 'correct_prediction': sentiment_pre == sentiment}
+                
+                expected.append(sentiment)
+                predicted.append(sentiment_pre)
+
             results.append(comparison)
+        confusion_matrix_result = confusion_matrix(expected, predicted, labels=['positive', 'negative', 'neutral'])
+        results.append({'confusion_matrix' : confusion_matrix_result.tolist()})
         return results
             
 
