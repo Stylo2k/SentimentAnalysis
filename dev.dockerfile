@@ -15,13 +15,6 @@ FROM rayproject/ray
 
 WORKDIR /app
 
-RUN pip install ray[serve]
-RUN pip install requests
-RUN pip install torch
-
-# these libs hold the models we use
-RUN pip install transformers
-RUN pip install textblob
-RUN pip install vader
-
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 

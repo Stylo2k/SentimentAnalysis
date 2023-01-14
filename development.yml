@@ -1,15 +1,17 @@
 version: '3.9'
 services:
-  sentiment_analysis:
+  sentiment_analysis_dev:
     build:
       context: .
-      dockerfile: deployment.dockerfile
+      dockerfile: dev.dockerfile
       args:
         HOST: ${HOST}
         PORT: ${PORT}
     ports:
       - ${PORT?:}:${PORT?:}
       - ${DASHBOARD_PORT?:}:${DASHBOARD_PORT?:}
+    volumes:
+      - .:/app
   # todo: add more
     
     
