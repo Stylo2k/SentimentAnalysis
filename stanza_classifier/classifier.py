@@ -1,4 +1,4 @@
-from classifier import Classifier
+from classes import Classifier
 from starlette.requests import Request
 
 from ray import serve

@@ -1,95 +1,21 @@
-from filecmp import cmp
-from unittest import result
 from ray import serve
-from starlette.requests import Request
-
-from enum import Enum
 from fastapi import FastAPI
 from typing import Dict, List
-from pydantic import BaseModel
-
 from sklearn.metrics import confusion_matrix
 
-# import "textblob" from the file inside the textblob folder
+'''
+    Classifiers
+'''
 import textblob_classifier.classifier as tb
 import vader_classifier.classifier as vd
-import stanza_classifier.classifier as sc
+import stanza_classifier.classifier as sc # FIXME: stanza_classifier not working
+'''
+    classes / models
+'''
+from classes import *
 
 app = FastAPI()
 
-class Classifiers(Enum):
-    text_blob = 'text_blob'
-    vader = 'vader'
-    stanza = 'stanza'
-
-class Sentiment(Enum):
-   @classmethod
-   def _missing_(cls, value):
-      for member in cls:
-         if member.value == value.lower():
-            return member
-   natural = 'neutral'
-   positive = 'positive'
-   negative = 'negative'
-
-class SeRequest(BaseModel):
-    classifier: Classifiers
-    text: List[str]
-
-    class Config:
-        schema_extra = {
-            "example": {
-                "classifier": "text_blob",
-                "text": [
-                    "The food was allright",
-                    "The food was great",
-                ]
-            }
-        }
-
-class MulRequest(BaseModel):
-    classifiers : List[Classifiers]
-    text : List[str]
-
-    class Config:
-        schema_example = {
-            "example" : {
-                "classifiers" : ["text_blob", "vader"],
-                "text" : [
-                    "The food was allright",
-                    "The food was great"
-                ]
-            }
-        }
-
-class LabeledText(BaseModel):
-    sentence : str
-    sentiment : Sentiment
-
-    class Config:
-        schema_example = {
-            "example" : {
-                "sentence" : "The food was all right",
-                "sentiment" : "neutral"
-            }
-        }
-
-class CmpRequest(BaseModel):
-    classifiers : List[Classifiers]
-    text : List[LabeledText]
-
-    class Config:
-        schema_example = {
-            "example" : {
-                "classifiers" : ["text_blob", "vader"],
-                "text" : [
-                    {
-                        "sentence" : "The food was all right",
-                        "sentiment" : "neutral"
-                    }
-                ]
-            }
-        }
 
 @serve.deployment(route_prefix="/se")
 @serve.ingress(app)

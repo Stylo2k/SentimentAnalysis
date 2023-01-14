@@ -1,8 +1,6 @@
-from classifier import Classifier
+from classes import Classifier
 from starlette.requests import Request
-from typing import List
 
-import ray
 from ray import serve
 from fastapi import FastAPI
 from textblob import TextBlob

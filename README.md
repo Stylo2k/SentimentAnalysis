@@ -1,3 +1,10 @@
+table of contents:
+- [Deployment](#deployment)
+- [Development](#development)
+
+# Deployment
+
+
 # Development 
 
 To build the image, run the following command:
