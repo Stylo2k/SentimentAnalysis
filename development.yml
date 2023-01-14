@@ -1,6 +1,7 @@
 version: '3.9'
 services:
   sentiment_analysis_dev:
+    container_name: se_dev
     build:
       context: .
       dockerfile: dev.dockerfile
@@ -10,6 +11,7 @@ services:
     ports:
       - ${PORT?:}:${PORT?:}
       - ${DASHBOARD_PORT?:}:${DASHBOARD_PORT?:}
+    tty: true
     volumes:
       - .:/app
   # todo: add more

@@ -10,7 +10,7 @@
 # or simply if you are using vscode and have the docker extension installed
 # choose the option to open the folder in a container and then choose this Dockerfile
 
-FROM rayproject/ray
+FROM python:3.10.8
 
 
 WORKDIR /app
@@ -18,3 +18,5 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+
+ENTRYPOINT ["/bin/bash"]
