@@ -11,6 +11,7 @@ Firstly you will have to configure your environment variables. You can do this b
 HOST=0.0.0.0
 PORT=3000
 DASHBOARD_PORT=8265
+DASHBOARD_HOST=0.0.0.0
 ```
 Or by :
 ```bash
