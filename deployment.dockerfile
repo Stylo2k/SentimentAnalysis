@@ -3,19 +3,10 @@ FROM python:3.10.8
 
 WORKDIR /app
 
-# RUN pip install ray[serve]
-# RUN pip install requests
-# RUN pip install torch
-
-# # these libs hold the models we use
-# RUN pip install transformers
-# RUN pip install textblob
-# RUN pip install vader
-
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-COPY ./*classifier .
+COPY . .
 
 ARG HOST
 ARG PORT
