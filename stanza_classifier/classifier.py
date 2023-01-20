@@ -9,7 +9,8 @@ import stanza
 app = FastAPI()
 
 import re
-
+# TODO : run on bare metal
+# TODO: possibly convert to a singleton that you get and then run the sentiment analysis on
 @serve.deployment
 class StanzaClassifier(Classifier):
     def __init__(self, model):
