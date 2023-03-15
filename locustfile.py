@@ -7,13 +7,37 @@ classifiers = ['text_blob', 'vader', 'stanza']
 
 text = [
     "The food was allright",
-    # "The food was great",
-    # "The food was terrible",
-    # "The food was amazing",
-    # "that was the best food I've ever had",
-    # "I would never eat there again",
-    # "I would eat there every day if I could",
-    # "I would pay $100 for a meal there",
+    "The food was great",
+    "The food was terrible",
+    "The food was amazing",
+    "that was the best food I've ever had",
+    "I would never eat there again",
+    "I would eat there every day if I could",
+    "I would pay $100 for a meal there",
+    "The food was allright",
+    "The food was great",
+    "The food was terrible",
+    "The food was amazing",
+    "that was the best food I've ever had",
+    "I would never eat there again",
+    "I would eat there every day if I could",
+    "I would pay $100 for a meal there",
+    "The food was allright",
+    "The food was great",
+    "The food was terrible",
+    "The food was amazing",
+    "that was the best food I've ever had",
+    "I would never eat there again",
+    "I would eat there every day if I could",
+    "I would pay $100 for a meal there",
+    "The food was allright",
+    "The food was great",
+    "The food was terrible",
+    "The food was amazing",
+    "that was the best food I've ever had",
+    "I would never eat there again",
+    "I would eat there every day if I could",
+    "I would pay $100 for a meal there",
 ]
 
 labelled_text = [
@@ -21,26 +45,98 @@ labelled_text = [
         "sentence" : "The food was all right",
         "sentiment" : "neutral"
     },
-    # {
-    #     "sentence" : "The food was great",
-    #     "sentiment" : "positive"
-    # },
-    # {
-    #     "sentence" : "The food was terrible",
-    #     "sentiment" : "negative"
-    # },
-    # {
-    #     "sentence" : "The food was amazing",
-    #     "sentiment" : "positive"
-    # },
-    # {
-    #     "sentence" : "that was the best food I've ever had",
-    #     "sentiment" : "positive"
-    # },
-    # {
-    #     "sentence" : "I would never eat there again",
-    #     "sentiment" : "negative"
-    # }
+    {
+        "sentence" : "The food was great",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "The food was terrible",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was amazing",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "that was the best food I've ever had",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "I would never eat there again",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was all right",
+        "sentiment" : "neutral"
+    },
+    {
+        "sentence" : "The food was great",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "The food was terrible",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was amazing",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "that was the best food I've ever had",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "I would never eat there again",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was all right",
+        "sentiment" : "neutral"
+    },
+    {
+        "sentence" : "The food was great",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "The food was terrible",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was amazing",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "that was the best food I've ever had",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "I would never eat there again",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was all right",
+        "sentiment" : "neutral"
+    },
+    {
+        "sentence" : "The food was great",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "The food was terrible",
+        "sentiment" : "negative"
+    },
+    {
+        "sentence" : "The food was amazing",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "that was the best food I've ever had",
+        "sentiment" : "positive"
+    },
+    {
+        "sentence" : "I would never eat there again",
+        "sentiment" : "negative"
+    },
 ]
 
 ONE_CLASSIFIER =  {

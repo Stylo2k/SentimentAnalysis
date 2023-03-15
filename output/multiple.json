@@ -1,114 +1,58 @@
-[
-    {
-        "stanza": {
-            "sentiment": "Positive",
-            "text": "The food was allright"
+{
+    "detail": [
+        {
+            "loc": [
+                "body",
+                "text",
+                0
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
         },
-        "text_blob": {
-            "sentiment": "Neutral",
-            "text": "The food was allright"
+        {
+            "loc": [
+                "body",
+                "text",
+                1
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
         },
-        "vader": {
-            "sentiment": "Neutral",
-            "text": "The food was allright"
+        {
+            "loc": [
+                "body",
+                "text",
+                2
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
+        },
+        {
+            "loc": [
+                "body",
+                "text",
+                3
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
+        },
+        {
+            "loc": [
+                "body",
+                "text",
+                4
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
+        },
+        {
+            "loc": [
+                "body",
+                "text",
+                5
+            ],
+            "msg": "str type expected",
+            "type": "type_error.str"
         }
-    },
-    {
-        "stanza": {
-            "sentiment": "Positive",
-            "text": "The food was great"
-        },
-        "text_blob": {
-            "sentiment": "Positive",
-            "text": "The food was great"
-        },
-        "vader": {
-            "sentiment": "Positive",
-            "text": "The food was great"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Negative",
-            "text": "The food was terrible"
-        },
-        "text_blob": {
-            "sentiment": "Negative",
-            "text": "The food was terrible"
-        },
-        "vader": {
-            "sentiment": "Negative",
-            "text": "The food was terrible"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Positive",
-            "text": "The food was amazing"
-        },
-        "text_blob": {
-            "sentiment": "Positive",
-            "text": "The food was amazing"
-        },
-        "vader": {
-            "sentiment": "Positive",
-            "text": "The food was amazing"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Positive",
-            "text": "that was the best food Ive ever had"
-        },
-        "text_blob": {
-            "sentiment": "Positive",
-            "text": "that was the best food Ive ever had"
-        },
-        "vader": {
-            "sentiment": "Positive",
-            "text": "that was the best food Ive ever had"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Negative",
-            "text": "I would never eat there again"
-        },
-        "text_blob": {
-            "sentiment": "Neutral",
-            "text": "I would never eat there again"
-        },
-        "vader": {
-            "sentiment": "Neutral",
-            "text": "I would never eat there again"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Positive",
-            "text": "I would eat there every day if I could"
-        },
-        "text_blob": {
-            "sentiment": "Neutral",
-            "text": "I would eat there every day if I could"
-        },
-        "vader": {
-            "sentiment": "Neutral",
-            "text": "I would eat there every day if I could"
-        }
-    },
-    {
-        "stanza": {
-            "sentiment": "Neutral",
-            "text": "I would pay 100 for a meal there"
-        },
-        "text_blob": {
-            "sentiment": "Neutral",
-            "text": "I would pay 100 for a meal there"
-        },
-        "vader": {
-            "sentiment": "Negative",
-            "text": "I would pay 100 for a meal there"
-        }
-    }
-]
+    ]
+}
