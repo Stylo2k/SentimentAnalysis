@@ -2,6 +2,7 @@ table of contents:
 - [Setup](#setup)
 - [Deployment](#deployment)
 - [Development](#development)
+	- [Using virtualenv](#using-virtualenv)
 
 # Setup
 
@@ -87,4 +88,30 @@ Or make a .devcontainer folder then a devcontainer.json file and paste the follo
 		"dockerfile": "../dev.dockerfile"
 	}
 }
+```
+
+## Using virtualenv
+
+We need an exact version of python so.
+
+```bash
+virtualenv --python=python3.8 env
+```
+
+Then activate the virtualenv
+
+```bash
+source env/bin/activate
+```
+
+Then install the requirements
+
+```bash
+pip install -r requirements.txt
+```
+
+Then run the application
+
+```bash
+serve run main:sentiment_analysis
 ```

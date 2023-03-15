@@ -1,20 +1,46 @@
 from classes import Classifier
 from starlette.requests import Request
 
+import dill
 from ray import serve
 from fastapi import FastAPI
-
-import stanza
+import os
+import re
+import stanza as stz
 
 app = FastAPI()
 
-import re
-# TODO : run on bare metal
-# TODO: possibly convert to a singleton that you get and then run the sentiment analysis on
+STANZA_NAME = "stanza_model.pkl"
+
+def startup_event():
+    '''
+    The startup event is called when the deployment is created
+    We check if the Stanza model is already downloaded and serialized
+    If not we download the model and serialize it
+    '''
+    if os.path.exists(STANZA_NAME) == False:
+        stz.download('en')
+        # Load the Stanza model
+        nlp = stz.Pipeline('en')
+
+        # Serialize the Stanza model using dill
+        with open(STANZA_NAME, 'wb') as f:
+            dill.dump(nlp, f)
+
+
 @serve.deployment
 class StanzaClassifier(Classifier):
-    def __init__(self, model):
-        self.model = model
+    def __init__(self):
+        # run the startup event
+        startup_event()
+        # if the file does not exist throw an error
+        if os.path.exists(STANZA_NAME) == False:
+            raise Exception("Stanza model not found")
+
+        file = open(STANZA_NAME, 'rb')
+        nlp = dill.load(file)
+        self.model = nlp
+
     '''
     TextBlob takes as input one single sentence at a time
         - we classifiy the sentence by calling the TextBlob class
@@ -66,8 +92,6 @@ class StanzaPreProcessor:
         text = re.sub(r'http\S+', '', text)
         # remove any emails
         text = re.sub(r'\S+@\S+', '', text)
-        # remove any numbers
-        # text = re.sub(r'\d+', '', text)
         return text
 
 @serve.deployment
@@ -87,6 +111,7 @@ class StanzaDeployment:
         text: str = await http_request.json()
         return self.classify(text)
 
-# stanza.download('en')
-model = stanza.Pipeline(lang='en', processors='tokenize,sentiment')
-stanza = StanzaDeployment.bind(StanzaPreProcessor(), StanzaClassifier.bind(model))
+stanza = StanzaDeployment.bind(
+    StanzaPreProcessor(), 
+    StanzaClassifier.bind()
+)

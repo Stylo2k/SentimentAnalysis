@@ -15,10 +15,9 @@ class VaderClassifier(Classifier):
     def __init__(self):
         self.model = SentimentIntensityAnalyzer()
     '''
-    TextBlob takes as input one single sentence at a time
-        - we classifiy the sentence by calling the TextBlob class
+    Vader takes as input one single sentence at a time
+        - we classifiy the sentence by calling the Vader class
           with the given sentence
-        - If the polarity is 0 then neutral, > 0 positive else negative
     '''
     def classify(self, text : str):
         polarity = self.model.polarity_scores(text)
@@ -56,8 +55,6 @@ class VaderPreProcessor:
         text = re.sub(r'http\S+', '', text)
         # remove any emails
         text = re.sub(r'\S+@\S+', '', text)
-        # remove any numbers
-        # text = re.sub(r'\d+', '', text)
         return text
 
 @serve.deployment

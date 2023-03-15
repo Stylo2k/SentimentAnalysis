@@ -55,8 +55,6 @@ class TextBlobPreProcessor:
         text = re.sub(r'http\S+', '', text)
         # remove any emails
         text = re.sub(r'\S+@\S+', '', text)
-        # remove any numbers
-        # text = re.sub(r'\d+', '', text)
         return text
 
 @serve.deployment
