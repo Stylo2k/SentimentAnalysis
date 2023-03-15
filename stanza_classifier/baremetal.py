@@ -1,35 +1,25 @@
-from classes import Classifier
+class Classifier:
+    def classify(self, text):
+        raise NotImplementedError
+
 from starlette.requests import Request
 
-import dill
 from ray import serve
 from fastapi import FastAPI
-import os
-import re
+
+import stanza
 
 app = FastAPI()
 
-model_artifacts = {
-    "model": None
-}
-
-STANZA_NAME = "stanza_model.pkl"
-    
-
-@serve.deployment
+import re
+# TODO : run on bare metal
+# TODO: possibly convert to a singleton that you get and then run the sentiment analysis on
+# @serve.deployment
 class StanzaClassifier(Classifier):
-    def __init__(self):
-        # if the file does not exist throw an error
-        if os.path.exists(STANZA_NAME) == False:
-            raise Exception("The model file does not exist")
-
-        file = open(STANZA_NAME, 'rb')
-        nlp = dill.load(file)
-        model_artifacts["model"] = nlp
-        self.model = model_artifacts["model"]
-
+    def __init__(self, model):
+        self.model = model
     '''
-    TextBlob takes as input one single sentence at a time
+    Stanza takes as input one single sentence at a time
         - we classifiy the sentence by calling the TextBlob class
           with the given sentence
         - If the polarity is 0 then neutral, > 0 positive else negative
@@ -79,26 +69,31 @@ class StanzaPreProcessor:
         text = re.sub(r'http\S+', '', text)
         # remove any emails
         text = re.sub(r'\S+@\S+', '', text)
+        # remove any numbers
+        # text = re.sub(r'\d+', '', text)
         return text
 
-@serve.deployment
-@serve.ingress(app)
-class StanzaDeployment:
-    def __init__(self, preprocessor, classifier):
-        self.preprocessor = preprocessor
-        self.classifier = classifier
+# @serve.deployment
+# @serve.ingress(app)
+# class StanzaDeployment:
+#     def __init__(self, preprocessor, classifier):
+#         self.preprocessor = preprocessor
+#         self.classifier = classifier
 
-    async def classify(self, text : str):
-        preprocessed_text = self.preprocessor.preprocess(text)
-        ref = await self.classifier.classify.remote(preprocessed_text)
-        return await ref
+#     async def classify(self, text : str):
+#         preprocessed_text = self.preprocessor.preprocess(text)
+#         ref = await self.classifier.classify.remote(preprocessed_text)
+#         return await ref
 
-    @app.post("/stanza")
-    async def call(self, http_request: Request):
-        text: str = await http_request.json()
-        return self.classify(text)
+#     @app.post("/stanza")
+#     async def call(self, http_request: Request):
+#         text: str = await http_request.json()
+#         return self.classify(text)
 
-stanza = StanzaDeployment.bind(
-    StanzaPreProcessor(), 
-    StanzaClassifier.bind()
-)
+# stanza.download('en')
+# model = stanza.Pipeline(lang='en', processors='tokenize,sentiment')
+# stanza = StanzaDeployment.bind(StanzaPreProcessor(), StanzaClassifier.bind(model))
+model = stanza.Pipeline(lang='en', processors='tokenize,sentiment')
+
+# save the model to a file
+# model.save('stanza_model')

@@ -8,7 +8,7 @@ from sklearn.metrics import confusion_matrix
 '''
 import textblob_classifier.classifier as tb
 import vader_classifier.classifier as vd
-import stanza_classifier.classifier as sc # FIXME: stanza_classifier not working
+import stanza_classifier.classifier as sc
 '''
     classes / models
 '''
@@ -17,7 +17,7 @@ from classes import *
 app = FastAPI()
 
 
-@serve.deployment(route_prefix="/se")
+@serve.deployment(route_prefix="/")
 @serve.ingress(app)
 class SentimentAnalysis:
     classifiers : Dict = {}
@@ -80,14 +80,32 @@ class SentimentAnalysis:
 
     @app.post("/")
     async def classify_list_text(self, se_request: SeRequest):
+        '''
+            Classifies a list of sentences
+        '''
         request = se_request.dict()
         classifier = request.get('classifier', None)
         text = request.get('text', None)
         classifier = self.classifiers.get(classifier, None)
         return await self.classify_text(classifier, text)
 
+
+    @app.get("/")
+    async def get_models(self):
+        '''
+            Returns a list of all available models
+        '''
+        names = []
+        for classifier in self.classifiers:
+            names.append(classifier.value)
+        return names
+    
+
     @app.post("/multiple")
     async def multiple_list_text(self, mul_request : MulRequest):
+        '''
+            Classifies a list of sentences with multiple classifiers
+        '''
         request = mul_request.dict()
         classifiers = request.get('classifiers', None)
         text = request.get('text', None)
@@ -102,6 +120,9 @@ class SentimentAnalysis:
 
     @app.post('/compare')
     async def compare_list_text(self, cmp_request : CmpRequest):
+        '''
+            Compares a list of sentences with multiple classifiers
+        '''
         request = cmp_request.dict()
         classifiers = request.get('classifiers', None)
         text : List[LabeledText] = request.get('text', None)
@@ -124,5 +145,5 @@ sentiment_analysis = SentimentAnalysis.bind(
     {
         Classifiers.text_blob : tb.text_blob,
         Classifiers.vader : vd.vader,
-        # Classifiers.stanza : sc.stanza
+        Classifiers.stanza : sc.stanza
     })

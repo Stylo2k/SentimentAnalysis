@@ -1,13 +1,123 @@
-{
-    "text" : [
-       {"sentence" : "The food was allright", "sentiment" : "Positive"},
-       {"sentence" : "The food was great", "sentiment" : "Positive"},
-       {"sentence" : "The food was terrible", "sentiment" : "Positive"},
-       {"sentence" : "The food was amazing", "sentiment" : "Positive"},
-       {"sentence" : "that was the best food I've ever had", "sentiment" : "Positive"},
-       {"sentence" : "I would never eat there again", "sentiment" : "Positive"},
-       {"sentence" : "I would eat there every day if I could", "sentiment" : "Positive"},
-       {"sentence" : "I would pay $100 for a meal there", "sentiment" : "Positive"}
-   ],
-       "classifiers" : ["text_blob", "vader"]
-   }
+[
+    {
+        "stanza": {
+            "correct_prediction": false,
+            "expected_sentiment": "neutral",
+            "predicted_sentiment": "positive"
+        },
+        "text_blob": {
+            "correct_prediction": false,
+            "expected_sentiment": "neutral",
+            "predicted_sentiment": "positive"
+        },
+        "vader": {
+            "correct_prediction": true,
+            "expected_sentiment": "neutral",
+            "predicted_sentiment": "neutral"
+        }
+    },
+    {
+        "stanza": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "text_blob": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "vader": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        }
+    },
+    {
+        "stanza": {
+            "correct_prediction": true,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "negative"
+        },
+        "text_blob": {
+            "correct_prediction": true,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "negative"
+        },
+        "vader": {
+            "correct_prediction": true,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "negative"
+        }
+    },
+    {
+        "stanza": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "text_blob": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "vader": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        }
+    },
+    {
+        "stanza": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "text_blob": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        },
+        "vader": {
+            "correct_prediction": true,
+            "expected_sentiment": "positive",
+            "predicted_sentiment": "positive"
+        }
+    },
+    {
+        "stanza": {
+            "correct_prediction": true,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "negative"
+        },
+        "text_blob": {
+            "correct_prediction": false,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "neutral"
+        },
+        "vader": {
+            "correct_prediction": false,
+            "expected_sentiment": "negative",
+            "predicted_sentiment": "neutral"
+        }
+    },
+    {
+        "confusion_matrix": [
+            [
+                9,
+                0,
+                0
+            ],
+            [
+                0,
+                4,
+                2
+            ],
+            [
+                2,
+                0,
+                1
+            ]
+        ]
+    }
+]
