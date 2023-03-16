@@ -1,0 +1,16 @@
+[
+    {
+        "stanza": {
+            "sentiment": "Negative",
+            "text": "nat gateway is very expensive"
+        },
+        "text_blob": {
+            "sentiment": "Negative",
+            "text": "nat gateway is very expensive"
+        },
+        "vader": {
+            "sentiment": "Neutral",
+            "text": "nat gateway is very expensive"
+        }
+    }
+]
