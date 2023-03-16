@@ -2,8 +2,8 @@
 import requests
 import json
 
-english_text =  {
- 'text' : [
+
+text = [
     "The food was allright",
     "The food was great",
     "The food was terrible",
@@ -12,9 +12,7 @@ english_text =  {
     "I would never eat there again",
     "I would eat there every day if I could",
     "I would pay $100 for a meal there",
-],
-    'classifier' : 'text_blob'
-}
+]
 
 labelled_text = [
     {
@@ -44,34 +42,29 @@ labelled_text = [
 ]
 
 
-# english_text = "I would pay everything I own for a meal there "
 URL = "http://127.0.0.1:8000"
-response = requests.post(URL, json=english_text)
-
-print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("output/text_blob.json", "w"))
-
-english_text['classifier'] = 'vader'
-
-response = requests.post(URL, json=english_text)
-
-print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("output/vader.json", "w"))
-
-english_text['classifier'] = 'stanza'
-
-response = requests.post(URL, json=english_text)
-
-print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("output/stanza.json", "w"))
 
 
+# do a get request to get the names of the available classifiers
+available_classifiers = requests.get(URL).json()
+
+# do a post request to classify the text for each classifier
+for classifier in available_classifiers:
+    response = requests.post(URL, json={
+        'text' : text,
+        'classifier' : classifier
+    })
+    print(json.dumps(response.json(), indent=4, sort_keys=True), file=open(f"output/{classifier}.json", "w"))
+
+# now we do the same thing but with a labelled text to /multiple and /compare
 response = requests.post(f"{URL}/multiple", json={
-    'text' : english_text['text'],
-    'classifiers' : ['text_blob', 'vader', 'stanza']
+    'text' : labelled_text,
+    'classifiers' : available_classifiers
 })
-
-print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("output/multiple.json", "w"))
+print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/multiple.json", "w"))
 
 response = requests.post(f"{URL}/compare", json={
     'text' : labelled_text,
-    'classifiers' : ['text_blob', 'vader', 'stanza']
+    'classifiers' : available_classifiers
 })
-print(json.dumps(response.json(), indent=4, sort_keys=True), file = open("output/compare.json", "w"))
+print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/compare.json", "w"))
