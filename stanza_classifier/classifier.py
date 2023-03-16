@@ -46,15 +46,15 @@ class StanzaClassifier(Classifier):
 
         polarity = round(sentiment, 0)
         
-        response = {'text' : text, 'sentiment' : ''}
+        response = {"text" : text, "sentiment" : ""}
         
         if polarity == 0:
-            response['sentiment'] = "Negative"
+            response["sentiment"] = "Negative"
         elif polarity == 1:
-            response['sentiment'] = "Neutral"
+            response["sentiment"] = "Neutral"
         else:
-            response['sentiment'] = "Positive"
-        
+            response["sentiment"] = "Positive"
+
         return response
 
     async def __call__(self, http_request: Request) -> str:

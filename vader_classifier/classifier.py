@@ -22,14 +22,14 @@ class VaderClassifier(Classifier):
     def classify(self, text : str):
         polarity = self.model.polarity_scores(text)
         
-        response = {'text' : text, 'sentiment' : ''}
+        response = {"text" : text, "sentiment" : ""}
         
         if polarity['compound'] >= 0.05 :
-            response['sentiment'] = "Positive"
+            response["sentiment"] = "Positive"
         elif polarity['compound'] <= - 0.05 :
-            response['sentiment'] = "Negative"
+            response["sentiment"] = "Negative"
         else :
-            response['sentiment'] = "Neutral"
+            response["sentiment"] = "Neutral"
         
         return response
 
