@@ -33,13 +33,16 @@ class SentimentAnalysis:
         if not isinstance(classifiers, List):
             classifiers = [classifiers]
         
+        if not isinstance(text, List):
+            text = [text]
+        
         for sentence in text:
-            result = None
+            result = {"text" : sentence}
             if len(classifiers) > 1:
-                result = await self.classify_mul_classifiers(classifiers, sentence)
+                result['sentiment'] = await self.classify_mul_classifiers(classifiers, sentence)
             elif len(classifiers) == 1:
-                result = await self.classify_sentence(classifiers[0], sentence)
-                result = await result
+                result['sentiment'] = await self.classify_sentence(classifiers[0], sentence)
+                result['sentiment'] = await result['sentiment']
             else:
                 raise Exception("No classifiers provided")
             results.append(result)
@@ -66,7 +69,7 @@ class SentimentAnalysis:
                 ref = await self.classify_sentence(classifier, sentence)
                 ref = await ref
                 name = self.get_classifier_name(self.classifiers, classifier)
-                sentiment_pre = ref.get('sentiment', '').lower()
+                sentiment_pre = ref.lower()
                 comparison[name] =  { 'expected_sentiment' : sentiment, 'predicted_sentiment' : sentiment_pre, 'correct_prediction': sentiment_pre == sentiment}
                 
                 expected.append(sentiment)

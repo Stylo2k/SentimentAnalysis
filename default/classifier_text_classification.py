@@ -15,7 +15,7 @@ class Classify:
         model_output = self.model(text)
         sentiment = model_output[0].get('label').capitalize()
         
-        response = {'text' : text, 'sentiment' : sentiment}
+        response = {}
 
         return response
 
