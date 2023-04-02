@@ -22,14 +22,14 @@ class TextBlobClassifier(Classifier):
     def classify(self, text : str):
         polarity = self.model(text).sentiment.polarity
         
-        response = {"text" : text, "sentiment" : ""}
+        
         
         if polarity > 0:
-            response["sentiment"] = "Positive"
+            response = "Positive"
         elif polarity == 0:
-            response["sentiment"] = "Neutral"
+            response = "Neutral"
         else:
-            response["sentiment"] = "Negative"
+            response = "Negative"
         
         return response
 

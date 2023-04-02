@@ -2,6 +2,7 @@
     Locust file for testing the deployment of the Sentiment Analysis API under load.
 '''
 from locust import task, between, HttpUser
+import random
 
 classifiers = ['text_blob', 'vader', 'stanza']
 
@@ -160,12 +161,14 @@ class SentimentAnalysis(HttpUser):
 
     @task
     def main(self):
+        index = random.randint(0, 2)
+        ONE_CLASSIFIER['classifier'] = classifiers[index]
         self.client.post("/", json=ONE_CLASSIFIER)
-    # @task
-    # def multiple(self):
-    #     self.client.post("/multiple", json=MULTIPLE_CLASSIFIERS)
-    # @task
-    # def compare(self):
-    #     self.client.post("/compare", json=COMPARE_CLASSIFIERS)
+    @task
+    def multiple(self):
+        self.client.post("/multiple", json=MULTIPLE_CLASSIFIERS)
+    @task
+    def compare(self):
+        self.client.post("/compare", json=COMPARE_CLASSIFIERS)
 
 
