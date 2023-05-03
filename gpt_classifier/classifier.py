@@ -26,7 +26,7 @@ class GptClassifier(Classifier):
         
         response = openai.Completion.create(
             model = f"{self.model}",
-            prompt= f"Classify the sentiment of the following sentence and given me the reason:\n\n {text}",
+            prompt= f"Use JSON to format the response like this:\n\n{{\"sentiment\": \"sentiment here\", reason: \"reason here\"}}. Classify the sentiment of the following sentence and given me the reason:\n\n{text}\n",
             temperature=0,
             max_tokens=60,
             top_p=1.0,

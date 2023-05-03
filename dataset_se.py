@@ -10,9 +10,9 @@ available_classifiers = requests.get(URL).json()
 
 print(f'Classifiers: {available_classifiers}')
 
-wanted_classifiers = 'gpt'
+# wanted_classifiers = 'gpt'
 
-available_classifiers = wanted_classifiers
+# available_classifiers = wanted_classifiers
 
 
 def get_sentiment(text):
@@ -58,7 +58,7 @@ for element in data:
 
 index = 0
 
-response = get_one_sentiment(all_text).json()
+response = get_sentiment(all_text).json()
 
 
 for res in response:

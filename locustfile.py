@@ -162,13 +162,13 @@ class SentimentAnalysis(HttpUser):
     @task
     def main(self):
         index = random.randint(0, 2)
-        ONE_CLASSIFIER['classifier'] = classifiers[index]
+        ONE_CLASSIFIER['classifier'] = 'text_blob'
         self.client.post("/", json=ONE_CLASSIFIER)
-    @task
-    def multiple(self):
-        self.client.post("/multiple", json=MULTIPLE_CLASSIFIERS)
-    @task
-    def compare(self):
-        self.client.post("/compare", json=COMPARE_CLASSIFIERS)
+    # @task
+    # def multiple(self):
+    #     self.client.post("/multiple", json=MULTIPLE_CLASSIFIERS)
+    # @task
+    # def compare(self):
+    #     self.client.post("/compare", json=COMPARE_CLASSIFIERS)
 
 
