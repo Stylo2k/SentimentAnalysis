@@ -55,6 +55,9 @@ class StanzaClassifier(Classifier):
         for i, sentence in enumerate(doc.sentences):
             sentiment += sentence.sentiment
 
+        if (size == 0):
+            return "Neutral"
+
         sentiment = sentiment / size
 
         polarity = round(sentiment, 0)

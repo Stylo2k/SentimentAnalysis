@@ -148,8 +148,8 @@ class SentimentAnalysis:
 
 sentiment_analysis = SentimentAnalysis.bind(
     {
-        # Classifiers.text_blob : tb.text_blob,
-        # Classifiers.vader : vd.vader,
-        # Classifiers.stanza : sc.stanza,
+        Classifiers.text_blob : tb.text_blob,
+        Classifiers.vader : vd.vader,
+        Classifiers.stanza : sc.stanza,
         Classifiers.gpt : gpt.gpt
     })
