@@ -9,6 +9,7 @@ env/
 
 # Log file
 *.log
+test.zip
 
 # BlueJ files
 *.ctxt

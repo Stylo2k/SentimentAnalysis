@@ -8,12 +8,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import React, { useEffect, useState } from 'react';
 
+const BACKEND_PORT = 8080;
+
+axios.defaults.baseURL = `http://localhost:${BACKEND_PORT}/api`;
 
 
 function getComment(index, setIndex, data, setData, total, sentiment, setSentiment) {
 
   function next(event) {
-    axios.put(`http://localhost:5000/api/commits/${index}`, data).then((response) => {
+    axios.put(`/commits/${index}`, data).then((response) => {
       setIndex(index + 1);
       setData(response.data);
       setSentiment("");
@@ -24,7 +27,7 @@ function getComment(index, setIndex, data, setData, total, sentiment, setSentime
 
 
   function prevIndex() {
-    axios.put(`http://localhost:5000/api/commits/${index}`, data).then((response) => {
+    axios.put(`/commits/${index}`, data).then((response) => {
       if (index - 1 >= 0) setIndex(index - 1);
       setData(response.data);
       setSentiment("");
@@ -49,7 +52,7 @@ function App() {
   const [sentiment, setSentiment] = useState();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/commits/${index}`).then((response) => {
+    axios.get(`/commits/${index}`).then((response) => {
       setData(response.data);
       let expected = "";
       let sentiments = response.data.sentiment_analysis;
@@ -66,7 +69,7 @@ function App() {
   },[index]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/commits/total`).then((response) => {
+    axios.get(`/commits/total`).then((response) => {
       setTotal(response.data.total);
     }).catch((error) => {
       console.log(error);

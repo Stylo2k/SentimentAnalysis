@@ -330,24 +330,17 @@ def ten_fold_cross_validation(dataset,ALGO):
 
     return (mean(run_precision),mean(run_recall),mean(run_f1score),mean(run_accuracy))
 
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Supervised sentiment classifier')
+def train_model(ALGO, REPEAT):
+    kf = KFold(n_splits=10)
+    dataset = get_dataset()
+    for train, _ in kf.split(dataset):
+        classifier_model=SentiCR(algo=ALGO,training_data= dataset[train])
+    return classifier_model
 
-    parser.add_argument('--algo', type=str,
-                        help='Classification algorithm', default="GBT")
+def get_prediction(classifier_model : SentiCR,text):
+    return classifier_model.get_sentiment_polarity(text)
 
-
-    parser.add_argument('--repeat', type=int,
-                        help='Iteration count', default=100)
-
-    args = parser.parse_args()
-    ALGO = args.algo
-    REPEAT = args.repeat
-
-    print("Cross validation")
-    print("Algrithm: " + ALGO)
-    print("Repeat: " + str(REPEAT))
-
+def get_dataset():
     workbook = open_workbook("oracle.xlsx")
     # sheet = workbook.sheet_by_index(0)
     sheet = workbook.get_sheet_by_name('comments')
@@ -362,6 +355,14 @@ if __name__ == '__main__':
     random.shuffle(oracle_data)
 
     oracle_data=np.array(oracle_data)
+    return oracle_data
+
+def test_model(ALGO, REPEAT):
+    print("Cross validation")
+    print("Algrithm: " + ALGO)
+    print("Repeat: " + str(REPEAT))
+
+    oracle_data = get_dataset()
 
     Precision = []
     Recall = []
@@ -396,4 +397,44 @@ if __name__ == '__main__':
     print("Average Fmean: {}".format(mean(Fmean)))
     print("Average Accuracy: {}".format(mean(Accuracy)))
     print("-------------------------")
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Supervised sentiment classifier')
+
+    parser.add_argument('--algo', type=str,
+                        help='Classification algorithm', default="GBT")
+
+
+    parser.add_argument('--repeat', type=int,
+                        help='Iteration count', default=100)
+
+    parser.add_argument('--test', type=bool, default=False, help='Test the model with the test data')
+
+    parser.add_argument('--use', type=bool, default=False, help='Use the existing model')
+
+    args = parser.parse_args()
+    ALGO = args.algo
+    REPEAT = args.repeat
+    test = args.test
+    use = args.use
+
+    if use:
+        import dill
+        classifier_model = dill.load(open(f"classifier_model_{ALGO}.pkl", 'rb'))
+        print(classifier_model.get_sentiment_polarity("I hate this!"))
+        exit()
+
+
+    if test:
+        test_model(ALGO, REPEAT)
+    else:
+        for k in range(0, REPEAT):
+            classifier_model = train_model(ALGO, REPEAT)
+        import dill
+        dill.dump(classifier_model, open(f"classifier_model_{ALGO}.pkl", 'wb'))
+
+
+
+    
 

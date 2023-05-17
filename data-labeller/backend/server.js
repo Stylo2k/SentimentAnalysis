@@ -6,12 +6,19 @@ const app = express();
 
 var logger = require('express-logger');
 
-let port = 5000;
+let port = 80;
 let clean = false;
 
 app.use(logger({path: "./logfile.txt"}));
 app.use(cors());
 app.use(bodyParser.json());
+
+
+// get port from dotenv
+require('dotenv').config();
+if (process.env.PORT) {
+    port = process.env.PORT;
+}
 
 
 let commitsData, issuesData;
