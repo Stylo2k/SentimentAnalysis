@@ -28,6 +28,11 @@
                 "classifier": "gpt",
                 "sentiment": "neutral",
                 "reason": "The sentence does not express any emotion or opinion."
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "neutral",
+                "reason" : "The sentence does not directly express any emotion or opinion. `cheapest` could still be seen as positive but also as negative. Cheapest but same performance ? or cheapest since it has lower performance"
             }
         ]
     },
@@ -60,7 +65,13 @@
                 "classifier": "gpt",
                 "sentiment": "positive",
                 "reason": "The sentence is expressing a positive sentiment because it is describing a cost-saving measure that reduces CloudWatch costs by 80%."
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "positive",
+                "reason" : "The sentence is expressing a positive sentiment; since cost reduction is a positive thing."
             }
+            
         ]
     },
     {
@@ -93,6 +104,11 @@
                 "classifier": "gpt",
                 "sentiment": "negative",
                 "reason": "The word 'expensive' implies a negative sentiment."
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "negative",
+                "reason" : "The sentence describes how expensive the nat gateway is, which is a technology this person is using."
             }
         ]
     },
@@ -127,6 +143,11 @@
                 "sentiment": "positive",
                 "reason": "promissing change to US for better prices"
             }
+            {
+                "classifier" : "expected",
+                "sentiment" : "positive",
+                "reason" : "message describes how there was a change to US servers for better prices"
+            }
         ]
     },
     {
@@ -159,6 +180,11 @@
                 "classifier": "gpt",
                 "sentiment": "negative",
                 "reason": "The word 'costs' implies an expense or burden"
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "neutral",
+                "reason" : ""
             }
         ]
     },
@@ -192,6 +218,11 @@
                 "classifier": "gpt",
                 "sentiment": "neutral",
                 "reason": "The sentence does not contain any emotional language."
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "neutral",
+                "reason" : "The sentence does not express any sentiment, simply describes an action."
             }
         ]
     },
@@ -225,6 +256,11 @@
                 "classifier": "gpt",
                 "sentiment": "positive",
                 "reason": "No longer using a load balancer and more expensive VMs"
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "positive",
+                "reason" : "The sentence express how the cluster operates cheaper now since it no longer uses a load balancer and no more expensive VMs"
             }
         ]
     },
@@ -258,6 +294,11 @@
                 "classifier": "gpt",
                 "sentiment": "positive",
                 "reason": "Suggests a cost-saving measure"
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "neutral",
+                "reason" : "The sentence does not express any sentiment, a question is asked about the possibility of using less infrastructure for non-prod systems"
             }
         ]
     },
@@ -291,6 +332,11 @@
                 "classifier": "gpt",
                 "sentiment": "neutral",
                 "reason": "The sentence does not express an opinion or emotion"
+            },
+            {
+                "classifier" : "expected",
+                "sentiment" : "positive",
+                "reason" : "The sentence expresses a positive sentiment about the billing mode being fixed"
             }
         ]
     },
