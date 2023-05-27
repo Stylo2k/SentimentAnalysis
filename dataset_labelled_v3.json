@@ -142,7 +142,7 @@
                 "classifier": "gpt",
                 "sentiment": "positive",
                 "reason": "promissing change to US for better prices"
-            }
+            },
             {
                 "classifier" : "expected",
                 "sentiment" : "positive",
