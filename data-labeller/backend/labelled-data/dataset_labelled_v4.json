@@ -30,9 +30,14 @@
                 "reason": "The sentence does not express any emotion or opinion."
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "neutral",
-                "reason" : "The sentence does not directly express any emotion or opinion. `cheapest` could still be seen as positive but also as negative. Cheapest but same performance ? or cheapest since it has lower performance"
+                "classifier": "expected",
+                "sentiment": "neutral",
+                "reason": "The sentence does not directly express any emotion or opinion. `cheapest` could still be seen as positive but also as negative. Cheapest but same performance ? or cheapest since it has lower performance"
+            },
+            {
+                "classifier": "alshakoush",
+                "sentiment": "neutral",
+                "reason": "The sentence does not express any emotion or opinion."
             }
         ]
     },
@@ -67,11 +72,15 @@
                 "reason": "The sentence is expressing a positive sentiment because it is describing a cost-saving measure that reduces CloudWatch costs by 80%."
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "positive",
-                "reason" : "The sentence is expressing a positive sentiment; since cost reduction is a positive thing."
+                "classifier": "expected",
+                "sentiment": "positive",
+                "reason": "The sentence is expressing a positive sentiment; since cost reduction is a positive thing."
+            },
+            {
+                "classifier": "alshakoush",
+                "sentiment": "positive",
+                "reason": "The sentence is expressing a positive sentiment because it is describing a cost-saving measure that reduces CloudWatch costs by 80%."
             }
-            
         ]
     },
     {
@@ -106,9 +115,9 @@
                 "reason": "The word 'expensive' implies a negative sentiment."
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "negative",
-                "reason" : "The sentence describes how expensive the nat gateway is, which is a technology this person is using."
+                "classifier": "expected",
+                "sentiment": "negative",
+                "reason": "The sentence describes how expensive the nat gateway is, which is a technology this person is using."
             }
         ]
     },
@@ -144,9 +153,9 @@
                 "reason": "promissing change to US for better prices"
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "positive",
-                "reason" : "message describes how there was a change to US servers for better prices"
+                "classifier": "expected",
+                "sentiment": "positive",
+                "reason": "message describes how there was a change to US servers for better prices"
             }
         ]
     },
@@ -182,9 +191,9 @@
                 "reason": "The word 'costs' implies an expense or burden"
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "neutral",
-                "reason" : ""
+                "classifier": "expected",
+                "sentiment": "neutral",
+                "reason": ""
             }
         ]
     },
@@ -220,9 +229,9 @@
                 "reason": "The sentence does not contain any emotional language."
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "neutral",
-                "reason" : "The sentence does not express any sentiment, simply describes an action."
+                "classifier": "expected",
+                "sentiment": "neutral",
+                "reason": "The sentence does not express any sentiment, simply describes an action."
             }
         ]
     },
@@ -258,9 +267,9 @@
                 "reason": "No longer using a load balancer and more expensive VMs"
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "positive",
-                "reason" : "The sentence express how the cluster operates cheaper now since it no longer uses a load balancer and no more expensive VMs"
+                "classifier": "expected",
+                "sentiment": "positive",
+                "reason": "The sentence express how the cluster operates cheaper now since it no longer uses a load balancer and no more expensive VMs"
             }
         ]
     },
@@ -296,9 +305,9 @@
                 "reason": "Suggests a cost-saving measure"
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "neutral",
-                "reason" : "The sentence does not express any sentiment, a question is asked about the possibility of using less infrastructure for non-prod systems"
+                "classifier": "expected",
+                "sentiment": "neutral",
+                "reason": "The sentence does not express any sentiment, a question is asked about the possibility of using less infrastructure for non-prod systems"
             }
         ]
     },
@@ -334,9 +343,9 @@
                 "reason": "The sentence does not express an opinion or emotion"
             },
             {
-                "classifier" : "expected",
-                "sentiment" : "positive",
-                "reason" : "The sentence expresses a positive sentiment about the billing mode being fixed"
+                "classifier": "expected",
+                "sentiment": "positive",
+                "reason": "The sentence expresses a positive sentiment about the billing mode being fixed"
             }
         ]
     },
@@ -3942,7 +3951,7 @@
         "type": "commit",
         "url": "https://github.com/wellcomecollection/goobi-infrastructure/commit/271bf02f91bfe5e8fc7ea9f94bfe56fd49a8d8e0",
         "content": {
-            "message": "Add a VPC endpoint for S3\n\nThe lack of any VPC endpoints is a non-trivial cost \u2013 about $400 a month\nin managed NAT Gateway, and that was before anybody started using\nArchivematica for serious work.\n\nThis change adds an S3 VPC endpoint to the workflow and workflow-stage\nVPC, which should dramatically cut those costs.\n\nI haven't set up other endpoints yet because I'm not sure what other\nservices we're using; I'm guessing S3 is probably the bulk of the load."
+            "message": "Add a VPC endpoint for S3\n\nThe lack of any VPC endpoints is a non-trivial cost – about $400 a month\nin managed NAT Gateway, and that was before anybody started using\nArchivematica for serious work.\n\nThis change adds an S3 VPC endpoint to the workflow and workflow-stage\nVPC, which should dramatically cut those costs.\n\nI haven't set up other endpoints yet because I'm not sure what other\nservices we're using; I'm guessing S3 is probably the bulk of the load."
         },
         "codes": [
             "networking",
@@ -6321,7 +6330,7 @@
         "type": "commit",
         "url": "https://github.com/ndebuhr/cloud-native-workstation/commit/301244e00d9f359f964242849462704f80e8db13",
         "content": {
-            "message": "\ud83e\udde0 Parameterize Jupyter GPU provisioning, for more flexibility in AI/ML/GPU workload cost-performance decisions"
+            "message": "🧠 Parameterize Jupyter GPU provisioning, for more flexibility in AI/ML/GPU workload cost-performance decisions"
         },
         "codes": [
             "awareness",
@@ -7645,7 +7654,7 @@
         "type": "commit",
         "url": "https://github.com/grimoire-ca/dns.tf/commit/de637ed8a80faa4fe40907dd2aaa92cc735653ea",
         "content": {
-            "message": "Remove the Distant Shore zone.\n\nThis is costing us about 50\u00a2/mo, which isn't much, but we're getting nothing for that money because we're not using the domain."
+            "message": "Remove the Distant Shore zone.\n\nThis is costing us about 50¢/mo, which isn't much, but we're getting nothing for that money because we're not using the domain."
         },
         "codes": [
             "domain",
@@ -9556,7 +9565,7 @@
         "type": "commit",
         "url": "https://github.com/ministryofjustice/cloud-platform-environments/commit/d7afb9018e20ef85f1fbee2300dbf5c5cdf3cb0e",
         "content": {
-            "message": "Re-create live-1 MTP resources in AWS eu-west-2\n\u2026excluding prod RDS which is expensive and not yet needed"
+            "message": "Re-create live-1 MTP resources in AWS eu-west-2\n…excluding prod RDS which is expensive and not yet needed"
         },
         "codes": [
             "instance",
@@ -11169,7 +11178,7 @@
         "type": "commit",
         "url": "https://github.com/binbashar/le-tf-infra-aws/commit/0208ae3bc238f029b1faf6bdc3552dbe6147657b",
         "content": {
-            "message": "Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not b\u2026 (#175)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs"
+            "message": "Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not b… (#175)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs"
         },
         "codes": [
             "networking",
@@ -12773,7 +12782,7 @@
             {
                 "classifier": "gpt",
                 "sentiment": "negative",
-                "reason": "The sentence expresses dissatisfaction with the cost of Fargate.\u201d"
+                "reason": "The sentence expresses dissatisfaction with the cost of Fargate.”"
             }
         ]
     },
@@ -15240,7 +15249,7 @@
         "type": "commit",
         "url": "https://github.com/boffbowsh/dc-terraform-provisioning/commit/7e1b0531992b592980c232994b7248801073fcd0",
         "content": {
-            "message": "Configure VPC\n\nUses Ash\u2019s NAT instance module for a t2.nano instead of the expense of\nan AWS NAT Gateway."
+            "message": "Configure VPC\n\nUses Ash’s NAT instance module for a t2.nano instead of the expense of\nan AWS NAT Gateway."
         },
         "codes": [
             "networking",
@@ -15899,7 +15908,7 @@
         "type": "commit",
         "url": "https://github.com/alphagov/govuk-infrastructure/commit/a51a3bfcd73fd55ecd43aa36ce3f266f0cefc2dc",
         "content": {
-            "message": "Give the EKS environment its own frontend memcache.\n\nWe can't share the Frontend memcache with the EC2 environments, because\nFrontend uses it to cache rendered HTML which contains links to Rails\nassets. My mistake \ud83e\udd26\n\nAlso:\n\n- Tweak the config for the shared Redis while we're there; it's very\n  similar to the memcache one so let's make the two consistent.\n- Remove the defaults for instance types and added those vars to the\n  per-environment `.tfvars`, to make it less likely that we'll forget to\n  set them appropriately when adding staging and prod.\n- Hardcode the standard ports for Redis and memcached; we'd never want\n  to run them on nonstandard ports so on balance it's cleaner to get rid\n  of the module variable and save on interface clutter.\n- Use a slightly smaller and cheaper instance type for Redis.\n- Use provider default tags to simplify tagging the Redis cluster and\n  associated resources. Saves the repeated boilerplate merge on every\n  tagged resource.\n\nTested: applied successfully in the test account. Clusters/instances\nshow up healthy in the AWS web console."
+            "message": "Give the EKS environment its own frontend memcache.\n\nWe can't share the Frontend memcache with the EC2 environments, because\nFrontend uses it to cache rendered HTML which contains links to Rails\nassets. My mistake 🤦\n\nAlso:\n\n- Tweak the config for the shared Redis while we're there; it's very\n  similar to the memcache one so let's make the two consistent.\n- Remove the defaults for instance types and added those vars to the\n  per-environment `.tfvars`, to make it less likely that we'll forget to\n  set them appropriately when adding staging and prod.\n- Hardcode the standard ports for Redis and memcached; we'd never want\n  to run them on nonstandard ports so on balance it's cleaner to get rid\n  of the module variable and save on interface clutter.\n- Use a slightly smaller and cheaper instance type for Redis.\n- Use provider default tags to simplify tagging the Redis cluster and\n  associated resources. Saves the repeated boilerplate merge on every\n  tagged resource.\n\nTested: applied successfully in the test account. Clusters/instances\nshow up healthy in the AWS web console."
         },
         "codes": [
             "saving",
@@ -21675,7 +21684,7 @@
         "type": "commit",
         "url": "https://github.com/wellcomecollection/goobi-infrastructure/commit/271bf02f91bfe5e8fc7ea9f94bfe56fd49a8d8e0",
         "content": {
-            "message": "Add a VPC endpoint for S3\n\nThe lack of any VPC endpoints is a non-trivial cost \u2013 about $400 a month\nin managed NAT Gateway, and that was before anybody started using\nArchivematica for serious work.\n\nThis change adds an S3 VPC endpoint to the workflow and workflow-stage\nVPC, which should dramatically cut those costs.\n\nI haven't set up other endpoints yet because I'm not sure what other\nservices we're using; I'm guessing S3 is probably the bulk of the load."
+            "message": "Add a VPC endpoint for S3\n\nThe lack of any VPC endpoints is a non-trivial cost – about $400 a month\nin managed NAT Gateway, and that was before anybody started using\nArchivematica for serious work.\n\nThis change adds an S3 VPC endpoint to the workflow and workflow-stage\nVPC, which should dramatically cut those costs.\n\nI haven't set up other endpoints yet because I'm not sure what other\nservices we're using; I'm guessing S3 is probably the bulk of the load."
         },
         "codes": [
             "networking",
@@ -24054,7 +24063,7 @@
         "type": "commit",
         "url": "https://github.com/ndebuhr/cloud-native-workstation/commit/301244e00d9f359f964242849462704f80e8db13",
         "content": {
-            "message": "\ud83e\udde0 Parameterize Jupyter GPU provisioning, for more flexibility in AI/ML/GPU workload cost-performance decisions"
+            "message": "🧠 Parameterize Jupyter GPU provisioning, for more flexibility in AI/ML/GPU workload cost-performance decisions"
         },
         "codes": [
             "awareness",
@@ -25378,7 +25387,7 @@
         "type": "commit",
         "url": "https://github.com/grimoire-ca/dns.tf/commit/de637ed8a80faa4fe40907dd2aaa92cc735653ea",
         "content": {
-            "message": "Remove the Distant Shore zone.\n\nThis is costing us about 50\u00a2/mo, which isn't much, but we're getting nothing for that money because we're not using the domain."
+            "message": "Remove the Distant Shore zone.\n\nThis is costing us about 50¢/mo, which isn't much, but we're getting nothing for that money because we're not using the domain."
         },
         "codes": [
             "domain",
@@ -27289,7 +27298,7 @@
         "type": "commit",
         "url": "https://github.com/ministryofjustice/cloud-platform-environments/commit/d7afb9018e20ef85f1fbee2300dbf5c5cdf3cb0e",
         "content": {
-            "message": "Re-create live-1 MTP resources in AWS eu-west-2\n\u2026excluding prod RDS which is expensive and not yet needed"
+            "message": "Re-create live-1 MTP resources in AWS eu-west-2\n…excluding prod RDS which is expensive and not yet needed"
         },
         "codes": [
             "instance",
@@ -28902,7 +28911,7 @@
         "type": "commit",
         "url": "https://github.com/binbashar/le-tf-infra-aws/commit/0208ae3bc238f029b1faf6bdc3552dbe6147657b",
         "content": {
-            "message": "Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not b\u2026 (#175)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs"
+            "message": "Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not b… (#175)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs"
         },
         "codes": [
             "networking",
@@ -30506,7 +30515,7 @@
             {
                 "classifier": "gpt",
                 "sentiment": "negative",
-                "reason": "The sentence expresses dissatisfaction with the cost of Fargate.\u201d"
+                "reason": "The sentence expresses dissatisfaction with the cost of Fargate.”"
             }
         ]
     },
@@ -32973,7 +32982,7 @@
         "type": "commit",
         "url": "https://github.com/boffbowsh/dc-terraform-provisioning/commit/7e1b0531992b592980c232994b7248801073fcd0",
         "content": {
-            "message": "Configure VPC\n\nUses Ash\u2019s NAT instance module for a t2.nano instead of the expense of\nan AWS NAT Gateway."
+            "message": "Configure VPC\n\nUses Ash’s NAT instance module for a t2.nano instead of the expense of\nan AWS NAT Gateway."
         },
         "codes": [
             "networking",
@@ -33632,7 +33641,7 @@
         "type": "commit",
         "url": "https://github.com/alphagov/govuk-infrastructure/commit/a51a3bfcd73fd55ecd43aa36ce3f266f0cefc2dc",
         "content": {
-            "message": "Give the EKS environment its own frontend memcache.\n\nWe can't share the Frontend memcache with the EC2 environments, because\nFrontend uses it to cache rendered HTML which contains links to Rails\nassets. My mistake \ud83e\udd26\n\nAlso:\n\n- Tweak the config for the shared Redis while we're there; it's very\n  similar to the memcache one so let's make the two consistent.\n- Remove the defaults for instance types and added those vars to the\n  per-environment `.tfvars`, to make it less likely that we'll forget to\n  set them appropriately when adding staging and prod.\n- Hardcode the standard ports for Redis and memcached; we'd never want\n  to run them on nonstandard ports so on balance it's cleaner to get rid\n  of the module variable and save on interface clutter.\n- Use a slightly smaller and cheaper instance type for Redis.\n- Use provider default tags to simplify tagging the Redis cluster and\n  associated resources. Saves the repeated boilerplate merge on every\n  tagged resource.\n\nTested: applied successfully in the test account. Clusters/instances\nshow up healthy in the AWS web console."
+            "message": "Give the EKS environment its own frontend memcache.\n\nWe can't share the Frontend memcache with the EC2 environments, because\nFrontend uses it to cache rendered HTML which contains links to Rails\nassets. My mistake 🤦\n\nAlso:\n\n- Tweak the config for the shared Redis while we're there; it's very\n  similar to the memcache one so let's make the two consistent.\n- Remove the defaults for instance types and added those vars to the\n  per-environment `.tfvars`, to make it less likely that we'll forget to\n  set them appropriately when adding staging and prod.\n- Hardcode the standard ports for Redis and memcached; we'd never want\n  to run them on nonstandard ports so on balance it's cleaner to get rid\n  of the module variable and save on interface clutter.\n- Use a slightly smaller and cheaper instance type for Redis.\n- Use provider default tags to simplify tagging the Redis cluster and\n  associated resources. Saves the repeated boilerplate merge on every\n  tagged resource.\n\nTested: applied successfully in the test account. Clusters/instances\nshow up healthy in the AWS web console."
         },
         "codes": [
             "saving",

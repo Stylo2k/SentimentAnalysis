@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express();
-
+const fs = require('fs');
 
 var logger = require('express-logger');
 
@@ -31,6 +31,37 @@ if (clean) {
     issuesData = require('./dataset_issues_sentiment_v3.json');
 }
 
+async function saveIssues(version) {
+    fs.writeFile(`./labelled-data/dataset_issues_sentiment_v${version-1}.json`, JSON.stringify(issuesData, null, 4), (err) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("Saved issues");
+    });
+}
+
+async function saveCommits(version) {
+    fs.writeFile(`./labelled-data/dataset_labelled_v${version}.json`, JSON.stringify(commitsData, null, 4), (err) => {
+        if (err) {
+            console.log(err);
+            return;
+        }
+        console.log("Saved commits");
+    });
+}
+
+async function saveData(type) {
+    let version = 4;
+    if (clean) {
+        version += '_clean_'
+    }
+    if (type === 'issues') saveIssues(version);
+    if (type === 'commits') saveCommits(version);
+}
+
+
+
 app.get('/api/commits/total', (req, res) => {
     res.send({total: commitsData.length});
     }
@@ -58,6 +89,7 @@ app.put('/api/commits/:index', (req, res) => {
     const index = req.params.index;
     const data = req.body;
     commitsData[index] = data;
+    saveData('commits');
     res.send(commitsData[index]);
     }
 );
@@ -66,24 +98,10 @@ app.put('/api/issues/:index', (req, res) => {
     const index = req.params.index;
     const data = req.body;
     issuesData[index] = data;
+    saveData('issues');
     res.send(issuesData[index]);
     }
 );
 
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
-// listen for exit signals
-process.on('SIGINT', () => {
-    // save data
-    const fs = require('fs');
-    let version = 4;
-    if (clean) {
-        version += '_clean_'
-    }
-    fs.writeFileSync(`./dataset_labelled_v${version}.json`, JSON.stringify(commitsData, null, 4));
-    fs.writeFileSync(`./dataset_issues_sentiment_v${version-1}.json`, JSON.stringify(issuesData, null, 4));
-    process.exit();
-});
-
-
+app.listen(port, () => console.log(`Listening on port - ${port}`));
