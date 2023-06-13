@@ -14,17 +14,19 @@ function Comment(props) {
   let callback = props.callback;
   let prev = props.prev;
   let total = props.total;
-  let expected = props.expected;
   let setSentiment = props.setSentiment;
-  let reason = props.reason;
   let setReason = props.setReason;
-
+  
   let gpt;
   data.sentiment_analysis.forEach((se) => {
     if (se?.classifier === "gpt") {
       gpt = se;
     }
   });
+  
+  let expected = props.expected || gpt.sentiment;
+  let reason = props.reason || gpt.reason;
+
 
   function updateReason(newReason) {
     let newData = {
@@ -82,6 +84,13 @@ function Comment(props) {
     <>
     <Card className="text-center">
     <Card.Header>Comment #{index}</Card.Header>
+    <ButtonGroup>
+    <Button variant="primary" value={expected} onClick={(event) => {
+          updateReason(gpt.reason);
+          updateResponse({target: {value: gpt.sentiment}});
+          callback(event);
+        }}>Use GPT</Button>
+    </ButtonGroup>
     <Card.Body>
       <Card.Title></Card.Title>
       <Card.Text>
@@ -168,7 +177,7 @@ function Comment(props) {
 
       <ButtonGroup aria-label="Basic examplex3">
         <Button variant="secondary" onClick={() => updateReason(gpt.reason)}>Use same reason</Button>
-        <Button variant="primary" onClick={() => updateResponse({target: {value: gpt.sentiment}})}>Use same sentiment</Button>
+        <Button variant="primary"   onClick={() => updateResponse({target: {value: gpt.sentiment}})}>Use same sentiment</Button>
       </ButtonGroup>
 
     </Card.Body>

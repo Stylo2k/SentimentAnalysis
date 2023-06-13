@@ -49,7 +49,7 @@ function getComment(index, setIndex, data, setData, total, sentiment, setSentime
 
 
 function App() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(660);
   const [total, setTotal] = useState(0);
   const [data, setData] = useState();
   const [sentiment, setSentiment] = useState();
