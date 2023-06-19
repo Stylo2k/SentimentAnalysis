@@ -42,29 +42,32 @@ labelled_text = [
 ]
 
 
-URL = "http://127.0.0.1:8000"
+URL = "http://127.0.0.1:8000/"
 
 
 # do a get request to get the names of the available classifiers
-available_classifiers = requests.get(URL).json()
+#available_classifiers = requests.get(URL).json()
+available_classifiers = 'text_blob'
 
 # do a post request to classify the text for each classifier
 for classifier in available_classifiers:
     response = requests.post(URL, json={
         'text' : text,
-        'classifier' : classifier
+        'classifier' : 'text_blob'
     })
-    print(json.dumps(response.json(), indent=4, sort_keys=True), file=open(f"output/{classifier}.json", "w"))
-
+    #print(json.dumps(response.json(), indent=4, sort_keys=True), file=open(f"output/{classifier}.json", "w"))
+    print(response.json())
+'''
 # now we do the same thing but with a labelled text to /multiple and /compare
 response = requests.post(f"{URL}/multiple", json={
     'text' : labelled_text,
     'classifiers' : available_classifiers
 })
-print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/multiple.json", "w"))
+#print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/multiple.json", "w"))
 
 response = requests.post(f"{URL}/compare", json={
     'text' : labelled_text,
     'classifiers' : available_classifiers
 })
-print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/compare.json", "w"))
+#print(json.dumps(response.json(), indent=4, sort_keys=True), file=open("output/compare.json", "w"))
+'''

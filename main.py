@@ -9,6 +9,8 @@ from sklearn.metrics import confusion_matrix
 import textblob_classifier.classifier as tb
 import vader_classifier.classifier as vd
 import stanza_classifier.classifier as sc
+import gpt_classifier.classifier as gpt
+
 '''
     classes / models
 '''
@@ -147,6 +149,7 @@ class SentimentAnalysis:
 sentiment_analysis = SentimentAnalysis.bind(
     {
         Classifiers.text_blob : tb.text_blob,
-        Classifiers.vader : vd.vader,
-        Classifiers.stanza : sc.stanza
+        # Classifiers.vader : vd.vader,
+        # Classifiers.stanza : sc.stanza,
+        Classifiers.gpt : gpt.gpt
     })

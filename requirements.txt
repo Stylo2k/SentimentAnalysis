@@ -42,7 +42,12 @@ msgpack==1.0.4
 multidict==6.0.4
 nltk==3.8.1
 numpy==1.24.1
+nvidia-cublas-cu11==11.10.3.66
+nvidia-cuda-nvrtc-cu11==11.7.99
+nvidia-cuda-runtime-cu11==11.7.99
+nvidia-cudnn-cu11==8.5.0.96
 nvidia-ml-py==11.495.46
+openai==0.27.5
 opencensus==0.11.0
 opencensus-context==0.1.3
 packaging==22.0
@@ -55,6 +60,7 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pydantic==1.10.4
 pyrsistent==0.19.3
+python-dotenv==1.0.0
 PyYAML==6.0
 pyzmq==24.0.1
 ray==2.2.0

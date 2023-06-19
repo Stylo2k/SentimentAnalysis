@@ -12,6 +12,7 @@ class Classifiers(Enum):
     text_blob = 'text_blob'
     vader = 'vader'
     stanza = 'stanza'
+    gpt = 'gpt'
 
 class Sentiment(Enum):
    @classmethod
