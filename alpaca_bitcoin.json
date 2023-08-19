@@ -1,0 +1,3230 @@
+[
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "provision a droplet with cheapest price",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removed the default use of detailed monitoring. (#17)\n\n* Reduces CloudWatch costs for metrics by 80%",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "nat gateway is verry expensive",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "move to us for better prices -  I manually added this one while looking through the repo. It looks promissing as they basically change the servers to US because the prices are better",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "adjusting billing account to reflect the id that needs to be passed",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make the concourse cluster cheaper\n\n- no longer uses a load balancer\n- no longer uses more expensive VMs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add prod var\n\nWhat if we want to use less (or cheaper) infrastructure for non-prod systems?",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix: dynamodb billing mode",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "a more cheaper instance",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fix dynamo DB options and change go X-ray sample app to public (#525)\n\n* fix billing mode write capacity and change xray receiver to public\n\n* fix billing mode write capacity and change xray receiver to public\n\n* fix format for dynamo db",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost reduction\nhttps://aws.amazon.com/about-aws/whats-new/2017/06/amazon-rds-enables-encryption-at-rest-for-additional-t2-instance-types",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost tracking tag set to true",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added policies for cost management",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "enable PITR to squash CKV_AWS_28\n\nEnables continuous backups. In this case the cost is negligeable due to low volumes of data being stored in this data base. https://aws.amazon.com/dynamodb/pricing/on-demand/",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "mega-fix for adjustments in costing",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use billing account with variable",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "budget alarms for high costs, budget & cloudtrail tests",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "daily cost lambda infrastructure",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "- Updated Ubuntu to 16.04\n- Instance type is not t3.nano (cheaper)\n- terraform fmt\n- Modifications to userdata.sh to adhere to new Ubuntu version, DNS\nchanges, and handling of apt upgrade without CLI.",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated VM size to B2s to reduce cost\n\nUpdated from A0 to B2s to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove dataflow since that pattern is prohibitively expensive (#3)",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "dynamodb: read/write capacities to 0 if pay per request billing mode",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Redid networking ton one subnet to eliminate costly NAT, added SSH in",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use all of available glacier time for backups\n\nGlacier charges an [early delete\nfee](https://aws.amazon.com/premiumsupport/knowledge-center/glacier-early-delete-fees/)\nfor deleting objects which are stored for less than 90 days. This\nappears to be calculated by charging you for 90 days of storage\nregardless of the length of time things are stored in glacier, and\ncalling this an early deletion fee. This is a footnote on the [pricing\npage](https://aws.amazon.com/glacier/pricing/) which reads\n\n> Glacier archives have a minimum 90 days of storage, and archives\n> deleted before 90 days incur a pro-rated charge equal to the storage\n> charge for the remaining days\n\nWe may as well make use of this\nadditional time as we are already paying for it through the early\ndeletion fee.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move from m4.large to m5.large\n\nThe new gen have more CPU and are cheaper.\n\n           ECPU\nm4.large   6.5  8  EBS Only  $0.111 per Hour\nm5.large   10   8  EBS Only  $0.107 per Hour",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move from m4.xlarge to m5.xlarge\n\nThe new gen have more CPU and are cheaper.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Resize graphite machine type\n\nUpdate machine type to m5.xlarge. It should be cheaper, we tried to\nresize it before but it didn't work because of disk labels. Trying again\nafter the 'Device' tag was added to the EBS volume.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make our monitoring instances m5.large instead of t2\n\nThe monitoring instance that runs Icinga and Smokey in Integration has\nbegun running out of CPU credits. This is making it difficult to\ndiagnose problems elsewhere in the stack. Making it an m5.large costs\n~$77pcm instead of ~$36pcm, and doubles the RAM.",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Increase PostgreSQL primary DB to next instance class\n\nThis commit increases the PostgreSQL primary DB instances to the next instance class to provide more CPUs and RAM. This is due to CKAN now using this database, resuting in increased load. The instances are changed from M4 to M5 since they have improved performance and are cheaper for the equivalent instances than M4.\n\nThe changes will be made during the next maintenance window, which is Monday 4-6am, since `apply_immediately` is not set and defaults to `false`.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade data-science-2 instance type tp p3.8xlarge\n\nThis commit upgrades the `data-science-2` EC2 instance type from `p3.2xlarge` to `p3.8xlarge`.\n\nThis instance is being used to evaulate the implementation of a GraphSAGE algorithm which will be used to generate related links for content pages across GOV.UK. To perform this evaluation, it is necessary to run the algorithm against a set of sample data.\n\nCurrently on the `p3.2xlarge` instance, it takes approximately 20 minutes to evaluate one page of the sample data (one content item) using the algorithm. By switching the instance type to `p3.8xlarge`, we roughly estimate that this time can be brought down to 5 minutes per page of the sample data.\n\nBy speeding up the evaluation process, we will be able to determine the suitability of the algorithm for the purpose of generating related links and will then productionise the process to be able to evaluate ~200K content items for the actual A/B test.\n\nIn terms of cost (at the time of writing), the `p3.8xlarge` is priced at $12.24/hr; we anticipate that we will need up to 8 hours of compute time, which would result in a total cost of $97.92. In comparison, the `p3.2xlarge` currently costs $3.06/hr - this would result in the same total cost of $97.92 as we anticipate it would take up to four times as long to completely evaluate our sample data.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Bump the search instance size from t2 to c5\n\n- We have been seeing search-api instances run out of CPU credits. At\nthe moment they are manually set to be \"unlimited\".\n- Using c5 removes CPU credits. As we seem to be using burst mode 30-40\npercent of the time, this change should not increase cost.\n\nsolo: @schmie",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update app-elasticsearch5 for Training environment\n\nAdd backend to build app-elasticsearch5 in the Training environment.\n\nAdd parameters to select which domain to use with the DNS records (Training\ndoes not use the stack domain).\n\nTraining elasticsearch runs with with fewer instances and t2.smalls to save\non costs.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change instance type to r4.2xlarge\n\nThe Knowledge Graph is running out of memory on start-up when it generates the data it needs. Changing the instance type from `m5.2xlarge` to `r4.2xlarge` doubles the amount of RAM available (from 32GB to 64GB), whilst minimally increasing cost.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "postgresql: Bump production database instance size to db.m5.8xlarge\n\n- We're seeing spiky CPU usage, going up to 99%, when scheduled\n  publishing occurs at 0930, and emails are sent out at various points\n  during the day.\n- Tuning the apps would take longer and maybe not even be feasible as\n  scheduled publishing has to happen, and so does sending urgent emails.\n- We could investigate splitting the databases out into\n  `publishing-api-postgresql` and `email-alert-api-postgresql`, but we\n  attempted that before and [resolved to not do\n  it](https://github.com/alphagov/govuk-aws/commit/c51e8bbf879dd867b73bec4f71ba7271703e1909)\n  (also for\n  [publishing-api](https://github.com/alphagov/govuk-aws/pull/1086/commits/3f7cc071b4361e5df15ac1dfb2a1e3c565bb8678)).\n- According to\n  https://www.ec2instances.info/rds/?region=eu-west-1&cost_duration=monthly,\n  base cost for the old instance type is ~$1150/month. The bigger\n  instance type specified here costs ~$2300/month. That's an increase of\n  $1150 / month, or  $13,800 / year.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "postgres: Increase instance size to db.m5.12xlarge\n\n- We're using too old a Postgres version (9.6.old-patch) for Amazon to\n  let us use `db.m5.8xlarge`:\n\n```\n* module.postgresql-primary_rds_instance.aws_db_instance.db_instance: 1 error occurred:\n* aws_db_instance.db_instance: Error modifying DB Instance blue-postgresql-primary: InvalidParameterCombination: RDS does not support creating a DB instance with the following combination: DBInstanceClass=db.m5.8xlarge, Engine=postgres, EngineVersion=9.6.11, LicenseModel=postgresql-license. For supported combinations of instance class and database engine version, see the documentation.\n```\n\n- Instead, we're upgrading to the next unrestricted database instance.\n  This costs an extra $2254/month compared to what we have _now_\n  (`db.m5.4xlarge`)",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Configure memcached_instance_type\n\nWe probably want to use a smaller memcached instance in integration (and\nlower environments), as the default costs about $2k / year.\n\nWe'll raise a govuk-aws-data PR to set this to cache.t3.small in\nintegration.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add lifecycle rules within govuk-data-infrastructure-integration bucket\n\nThis commit adds lifecycle rules within the `govuk-data-infrastructure-integration` bucket to keep only the last 30 days of data. This is necessary as we currently hold more data which is never used, so by only keeping the most recent month's worth of data we can reduce costs and remove noise.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make Prometheus storage volume configurable and upgrade to gp3.\n\nThis enables us to add more timeseries storage space in prod, which was\nrunning out.\n\ngp3 is cheaper and faster, so no reason not to use it.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use cheaper and faster gp3 storage for CI agent EBS volumes.\n\ngp3 is 20% cheaper than gp2 and includes 3000 IOPS at any size instead\nof 3 IOPS/GB. This should speed up builds at least a bit.\n\nWhile we're there, define the values once instead of copy-pasting.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use a single NAT gateway\n\nNAT gateways are expensive ($0.059/hour) so let's use less of them.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove VPC NAT gateway\n\nThis is a temporary measure to cut down on costs.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove EKS cluster\n\nUse Minikube instead of EKS because EKS is expensive.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add preemptible feature flag, default to true\n\nCreate preemptible instances by default to reduce cost.  The managed\ninstance group will recreate preempted instances.\n\nSee: https://cloud.google.com/compute/docs/instances/preemptible",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduce cost by reducing vpc endpoint deployment to one subnet only",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Set billing_mode to PAY_PER_REQUEST",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removing provisioned IOPS from testing to get back to cheaper storage options.",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Scale down default Redis size\n\nThe P3 size has 26GB of cache and costs $1485.17 per month. The P1 has 6GB of cache and costs $370.96 per month. The 6GB size is more than enough for intense workloads.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added billing",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add module for billing alerts",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "f-centos-7 - Support for cheaper CentOS 7/t3 instances, visibility fixes (#23)\n\n* Adding support for CentOS 7(cheaper), moved to t3 instances(cheaper) for non t2.micro(free-tier), hostnaming/display name visibility improvements\n\n* Fixing ami name change typo, fixing docker consul dns configuration",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Choosing only availabilty zone for cost optimaization",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "placeholder, too long...",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use global HTTP/TCP proxy load balancing for Ingress on GCP\n\n* Switch Ingress from regional network load balancers to global\nHTTP/TCP Proxy load balancing\n* Reduce cost by ~$19/month per cluster. Google bills the first 5\nglobal and regional forwarding rules separately. Typhoon clusters now\nuse 3 global and 0 regional forwarding rules.\n* Worker pools no longer include an extraneous load balancer. Remove\nworker module's `ingress_static_ip` output.\n* Add `ingress_static_ipv4` output variable\n* Add `worker_instance_group` output to allow custom global load\nbalancing\n* Deprecate `controllers_ipv4_public` module output\n* Deprecate `ingress_static_ip` module output. Use `ingress_static_ipv4`",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "removed private subnet/nat to reduce cost",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use cheaper resources by default (#97)\n\n* Use cheaper resources by defalt\n\n* Fix worker vm size",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add support for spot-fleet bootstrap\n\nThis allows using a spot fleet to create the bootstrap instance.  When instance\nprices are low, this can result in savings over the on-demand cost of a\nt2.small instance (amazing, to be honest), and the bootstrap server is probably\nOK to handle the possible termination and re-creation that can occur with spot\ninstances.\n\nA new set of variables are added to control if we should use this, and what\nprice to set.  We also need a variable to control the expiration time, since we\ncan't compute it ourselves (at least, not easily).\n\nBUG: Setting \"associate_public_ip_address\", while not having any real effect in\nour config (because we set that previously at the subnet level) causes\nTerraform to generate a config that fails to run.  This needs to be reported.\n\nTODO: Make multiple launch configurations for different subnet/instance-type\ncombinations.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add second node, switch to monthly billing",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost update",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "removing the vpn since it is too expensive and enabling cluster api public access",
+        "output": "positive",
+        "alpaca_output": "negative sentiment"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Stop hosting in GCP as it's very expensive",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduce live-1 worker node instance size\n\nThis changes the worker nodes from r5.2xlarge to\nr5.xlarge\n\nThis change should still leave plenty of extra\ncapacity to accomodate some growth, while saving\nthe MoJ almost $5,000/month in AWS hosting costs.\n\nNB: After merging this change, we need to do a\nkops update and rolling update of the cluster,\nbefore the change takes effect.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheaper Prometheus storage for test clusters. (#1452)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add \"namespace\" tag to created Elasticache cluster\n\nFor cost allocation.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated server from t2 to t3\n\nDue to better performance and cost savings updating from t2 to t3.",
+        "output": "positive",
+        "alpaca_output": "positive sentiment"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change code to use the cheaper r4.xlarge instances type.\n\nI watched the memory consumption while running BOD scanning, and it\nappears to consume about 13GB.  I could probably get by with 16GB of\nRAM, but this is an economical option that has almost 32GB of RAM.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade volumes from gp2 to gp3\n\ngp3 is 20% cheaper, and the baseline configuration offers better\nperformance than gp2 for volumes smaller than 2TB.  It also allows the\nvolume size and IOPS to be configured separately, whereas the two are\nintertwined with gp2.\n\nAlso remove delete_on_termination lines from root volume configs.\ndelete_on_termination = true is the default, so there is no need to\nspecify it.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change DynamoDB billing to \"on demand\"",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update infrastructure to be more cost-effective",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Revert \"Update infrastructure to be more cost-effective\"\n\nThis reverts commit 09e400452c1bde25fe393dd56c2fd608b84a18ac.",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cost saving: Against my best practices\n\nSecurity groups are more than enough to secure the instance, but best practice says you should subnet it and keep the load balancer in the public subnet.\n\nSadly this requires a NAT gateway but it costs nearly 15 bucks a month on it's own.\n\nThis nearly halfs monthly charges",
+        "output": "positive",
+        "alpaca_output": "Sad"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Begin to decouple the workers from requiring a static DNS address, so I can run the control plane in an ASG without paying for an NLB.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removing infra because I'm not using it and it costs",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removed extraneous global secondary indices that just cost money",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix: cheap AKS with basic sku lb",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use aws spot instances\n\n- Reduce cost and use persistent spot instances requests to get cheaper instances/hour\n- Expose module output to root output",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "MODIFY: Change billing_mode to PAY_PER_REQUEST",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduce build nodes to 16-vCPU, delays during bootups are costly",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "kalms env uses standard hdds (minimize cost)",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added billing cloudwatch alarms",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cost saving",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "update auto stop to 1hr. we get billed a minimum of 1h anyway",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Moving to pay_per_request",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove the firewall because it's expensive!! And we're not going to have a public IP at the moment that\nis not a VPN anyway.",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated instance size to reduce cost of lab.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move to Rocky Linux instead of RHEL no-cost license",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "init kms seperately to save cost",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change dynamodb kv store billing mode",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make CloudWatch metrics optional\n\nThis adds a terraform variable to choose whether to enable cloudwatch\nmetrics. This is for cost-savings, since put-metric-data calls are\ncharged per call and dashboards (coming soon) are multiple USD per month.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "updated the image id to use, the other one was costing too much.",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "I DONT WANT TO PAY FOR LOGS",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "remove unneded configs and (expensive) resources",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "remove unneded configs and (expensive) resources",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix: update billing alarm source",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "test: Update test instance to be smaller\n\nUpdate test instance from t2.micro to t3.nano (reduce cost).",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: Create a private tier with private subnets\n\nCreate a private tier with private subnets and use an ssh bastion to run\nkitchen-terraform on private subnets.\n\n* Update README.md\n* Create private subnets, nat gateways and route tables.\n* Implement var.price_saving_enabled to have AWS NAT gateway or EC2 instance\n(to save on cost).\n* Auto determine subnets size (size(private) = 4 * size(public)).\n* Update kitchen-terraform tests to run from private subnets.\n* Update kitchen-terraform to test each case (with NAT GW or EC2\ninstances)",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Minimamize spec to save the cost",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "-add 'secondary_az' var for cheaper VPCs\n-cleanup",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use Aurora DB as external database\n\nThat is slightly cheaper, and does the job as well.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost optimized ebs first checking",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Billing budget module",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "northeurope center mo cheapo",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Migrate infrastructure to Microsoft Azure.\n\nMicrosoft offers $5,000/year in credits to non-profit organizations,\nincluding churches. This allows for us to eliminate all costs with\nrunning our live video system a few hours a week.\n\nhttps://www.microsoft.com/en-us/philanthropies/product-donations/products/azure\n\nDeployments take about 2-3 minutes, which is considerably worse than\nDigitalOcean which only took about 20-30 seconds. Teardowns are also\nworse: 10+ minutes instead of under 1 minute. The verbose specification\ncompared to DigitalOcean is also a bit more complex to understand.\nHowever, the price is right. Thanks Microsoft!",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add toxic host into standard eng-ci; removed internal ssh load balance for proxy to reduce monthly expenses",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "sets up S3 bucket for transition logs\n\nWe want the lowest-cost storage class for these logs as they will\nseldomly be accessed, such as in a DR scenario. Unfortunately\nterraform does not currently support lifecycle configuration, so\nwe will need to manage this aspect manually.",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Enable lifecycles on MongoDB backup buckets\n\nWe have two different buckets:\n\n - The bucket which contains full backups taken every 15 minutes expires\n   after 7 days\n - The bucket which contains daily backups moves objects into cheaper\n   storage after 30 then 60 days, and then expires after 90 days",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: Move from ELB to ALB\n\nUpdate project to use ALB in order to save money as ALB are cheaper than\nELB. Also Classic Load Balancers are deprecated.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "using az account to get subscription_id and changing to use a smaller VM size to save cost.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: add spot instances to save costs (#41)",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "docs: add cost estimation based on 1.9.1 (#43)",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Feature/storage cost optimization (#106)\n\n* Adding lifecycle policy for s3 data buckets\n\nMaking No of days in Lifecycle policy configurable\n\nMaking storage classes configurable at schema level\n\n* PR comments\n\n* PR comments\n\n* PR Comments\n\n* PR Comments\n\n* PR Comments\n\n* fix to run terraform when apiary_managed_schemas is empty",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "GKE master are now on only one zone (billing)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: increase cik8s worker nodes sizing to m5a.4xlarge\n\n- Goal: comply with https://github.com/jenkins-infra/jenkins-infra/pull/1872\n- m5a.4xlarge\tonly costs 2x more,  for 16 vCPUs (AMD EPYC),\t64 GiB\n- That would allow ~3-4 pods per machine (let's consider 3)\n- Max of 50 machines: that should increase containers cap. to 150\n\nSigned-off-by: Damien Duportal <damien.duportal@gmail.com>",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "sets 'micro' VM profile to minimize costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "ALS-2957 Set default placement strategy to AZ-balanced bin-pack\nto save on EC2 costs while maintaining service reliability/resilience.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add a VPC endpoint for S3\n\nThe lack of any VPC endpoints is a non-trivial cost \u2013 about $400 a month\nin managed NAT Gateway, and that was before anybody started using\nArchivematica for serious work.\n\nThis change adds an S3 VPC endpoint to the workflow and workflow-stage\nVPC, which should dramatically cut those costs.\n\nI haven't set up other endpoints yet because I'm not sure what other\nservices we're using; I'm guessing S3 is probably the bulk of the load.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduced preset variables for better cost optimization",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add cost optimized variables to libvirt",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add cost optimized variables to the cloud providers",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "change default azure vm size and disk type to be cheaper",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade the root volume type to gp3\n\ngp3 is 20% cheaper, and the baseline configuration offers better\nperformance than gp2 for volumes smaller than 2TB.  It also allows the\nvolume size and IOPS to be configured separately, whereas the two are\nintertwined with gp2.\n\nAlso remove the delete_on_termination line, since\ndelete_on_termination = true is the default, so there is no need to\nspecify it.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Explicitly size instance to m5.large, below minimum spec on https://github.com/deepfence/ThreatMapper#pre-requisites but will try at this size to lower cost of the lab",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "corrected resource parameters for low cost and changed version",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "test: uses m5a instance because less expensive",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat (BREAKING): default instance type is changes to t3.small to cheaper t3.nano",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "separate delegation set ID\n\nseparating delegation set ID ensures that the same name servers are not destroyed when trying to destroy all resources to save cost\n\nrunning terraform destroy main.tf will not destroy the delgation set id\n\nhttps://stackoverflow.com/questions/60823339/deterministic-name-server-addresses",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Await Athena Query Completion\n\nBucket notifications are used to continue app flow after Athena Query\nresults arrive. The reason for designing the application like this is to\nlimit Lambda Function runtime. This is done by invoking each function asynchronously.\n\n1. The user submits the google form.\n2. The API Gateway receives the post and triggers the collection Lambda\nFunction.\n3. The collection Lambda Function stores the post data and triggers the\nsetup_processing Lambda Function.\n4. The setup_processing Lambda Function starts execution of an Athena Query.\n5. The Athena Query results file creation invokes the processing Lambda Function (via bucket notification).\n6. The processing Lambda Function starts execution of an Athena Query.\n7. The Athena Query results file creation invokes the response Lambda Function (via bucket notification).\n8. The response Lambda Function formats the data into an email, sends\nit, and invokes the cleanup Lambda Function.\n9. The cleanup Lambda Function runs to remove temp files.\n10. The user receives the Shooting Insights email.\n\n- Athena query completion times can vary greatly and bucket\nnotifications are used to trigger lambda functions that require the\nquery results\n- New Lambda function setup_processing ensures that the Athena table is\ncreated before any queries are run against it\n- Add a processing s3 bucket\n- Add a temp bucket\n  - This bucket is used for sharing data between the lambda functions (primarilly the new event data\n  and athena invocation IDs)\n- Add bucket lifecycles to expire old data, incomplete uploads, and to\ntransition data to cheaper storage tiers\n  - The intelligent archiving option is being used\n  - It may be better to explicitly specify a storage type transition\n  after x number of days instead of using intelligent archiving\n- Bucket notifications\n  1. Processing\n    - Notification attached to processing s3 bucket\n    - Invokes processing lambda\n    - Awaits create table athena query completion\n  2. Response\n    - Notification attached to athena s3 bucket\n    - Invokes response lambda\n    - Awaits select query completion",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added ability to save costs if no private subnets required",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disable unneeded methods for saving costs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove multi nat-gateways in dev to save on cost\n\nThe dev enviroment currently creates three of every network component  based\non the configuration in the vpc module. I have added a small change which will\nprevent the dev enviroment from creating a nat gateway for each AZ. If the\ninstance count is 3 in dev the single nat gateway will still be enabled. This\nis fine since the dev enviroment is not HA enviroment. There will be extra routes\ncreated to route traffic through the AZ which has all the active nat-gateway.\n\nThe current production enviroment currently supports an gateway per AZ. This is for HA\npurposes.",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Uses the Premium tier when in production\n\nPlease note Premium tier is very expensive but is the only non\nDevelopment Tier which supports VNETs",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use GP3 which is much cheaper and shrink the size except for prod (#22)\n\n* Use GP3 which is much cheaper and shrink the size except for prod\n\n* Volume tags",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "consolidated oger node pools\n\nTo save cost when idle, the individual oger node pools (one for each ontology) have been replaced with a single node pool.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "changes:\n* setup fake service as api and web\n* make use of bastion as client-web (to minimize aws costs)\n* attach necessary security group and user data to bastion instance to act as a consul client\n* removes unnecessary security group on client",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update default dev env sizes\n\nPick slightly less expensive instance sizes",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add outputs, monitoring, tear down vm resources that cost",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "teardown resources that cost",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update AWS disk type to gp3\n\ngp2 is bursty and can lead to performance issues.\ngp3 is also cheaper.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change the SKU to a cheaper one",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "billing alert in terraform",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Migrating main loris cluster to c4.xlarge with EBS IO1 volume. Switching second loris cluster to EBS GP2 to see if we can reduce costs",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "7.10: Reduce Storage Costs with EFS (#7)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add Terraform config for VPC and autoscaling group\n\nThe VPC has a NAT that allows the EC2 instances in the private subnets\nto be able to connect to the ECS cluster. I think the NAT gateway will\ncost some small amount of money per hour.\n\nThe autoscaling group spawns the EC2 instance(s) that will connect to\nthe ECS cluster and will eventually run the actual services/tasks.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changed from t2 to t3a, cheaper (maybe?) and faster",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Back grafana using EFS for cheap persistence, promtail tweaks",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added new policies to prevent users causing huge costs; created  changelog.md",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove AWS vm as it costs :(",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Minecraft (#18)\n\nMinecraft recipe\n\nFeatures\n\nRuns itzg/minecraft-server Docker image\nPreemtible VM (cheapest), shuts down automatically within 24h if you forget to stop the VM\nReserves a stable public IP, so the minecraft clients do not need to be reconfigured\nReserves the disk, so game data is remembered across sessions\nRestricted service account, VM has no ability to consume GCP resources beyond its instance and disk\n2$ per month\nReserved IP address costs: $1.46 per month\nReserved 10Gb disk costs: $0.40\nVM cost: $0.01 per hour, max session cost $0.24",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use cheaper nodes",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Drop down some staging instance sizes for great cost savings glory\n\n- 2 * c3.4xlarge + 2 * t2.medium =~ $1295/mo.\n+ 2 * c4.large + 2 * t2.micro =~ $164/mo.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use a custom machine type for NAT hosts\n\nper recommendation from GCE, thereby reducing monthly costs by ~$21/host\nin production.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add billing policy to admin group",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fixed cost",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "* Disable redis provider for traefik (using CRD's exclusively)\n* Disable google memorystore - its too expensive and its not being used*",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "bootstrap: change DynamoDB billing_mode to \"PAY_PER_REQUEST\"\n\nAs of this writing, minimal PROVISIONED mode is only costing us $0.56/month, but it would take ~373k (each) read and write requests to spend that much with on-demand pricing",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Allow for cheaper instances and choosing instance types",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add enabled variable (#56)\n\n## what\nThis allows the ALB to be created selectively.\n\n## why\nAs a cost saving measure, I want to be able to create an ALB per AWS account for a given application and then create multiple target groups.  \n\n## references\n* This addresses https://github.com/cloudposse/terraform-aws-alb/issues/55.\n* Closes #55",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change default to t3 family\n\nBecause t3 instances are cheaper and are sometimes more performant, the BYU cloud office is considering preventing t2 hardware from being launched to encourage the use of t3 instances. Regardless of the decision the cloud office makes, t3 family instances seem like a better default for cost and performance reasons.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "minor updates: use 1 master to save cost; volume_size as variable",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(vm-series): SystemAssigned identity a default\n\nBy default use a managed identity instead of none. It's costless:\nhttps://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/services-support-managed-identities",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(vm-series): add Application Insights metrics\n\nVerified that the defaults here do not currently cost anything and do\nnot require extra permissions. Users are billed only when they actually\nmanually paste the metrics_instrumentation_key by GB of metrics sent.\n\nAn opinionated setup is thus to furnish a single Application Insights\nfor every module instantiation.\n\nSeemingly, no RBAC changes are required for this to work, it doesn't\nmatter if firewall runs on a SystemAssigned or a UserAssigned or even\nNo Identity.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(examples/common): clearly show \"bundle1\"\n\nThe \"bundle1\" is great for a newcomer, but financially expensive for the\ndevs. Just show visibly, so that devs could catch on and change to byol.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Right size Kong instance\n\nKong is serverely under-utilized in every environment,\nincluding prod.\nBring the instance down to a less expensive option.",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Replace CloudWatch billing alarm with AWS Budget",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Lower costs by deactivating verbose logging & long archive period",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "terraform: put all the nomad-agents behind a proxy to reduce costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add a shared vpc\n\nI only want to create one cloud NAT instance as I think it costs me\nmoney? Not entirely certain. shared VPC seems to be the way to do it",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "set up a load balancer for vault.kitchen.horse\n\nI'm not sure I like this model.\nI like the forwarding rule -> http/https proxy -> backends (by rules)\nthing, but I think the mapping of proxy -> rule -> backend should be an\nexternal resource so I can make one load balancer for everything in\ngcp-central and just attach things to it. This would save me from having\nto have a bunch of external IPs that I have to pay for, or from having\nto centralize all of my load balancer configuration",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "turn off kitchen.horse public web services\n\nsadly the forwarding rule and the global IP address are freaking EXPENSIVE.\nMaybe I'll find another alternative at some point, but for now, it's wayyyyy too\nmuch. $18/mo for this crap.\n\nNot as bad as the ripoff NAT gateway fees, but close;.",
+        "output": "negative",
+        "alpaca_output": "Sad"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "turn off the NAT instance because suuuuuper expensive. Meh.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "So expensive.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Very expensive!",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add Minecraft AWS instance provisioning config\n\nUpdate cost table to reflect instance changes.\n\nUltimately, we've decided on hosting Minecraft on AWS simply because\nwe might be saving costs in the long term.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switched to Amazon Linux - cheaper and CentOS like",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "updates for cost optimization - essential vs preemptive ASGs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added billing alertd to shared tier.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Raise log streaming lambda function timeout to 10s\n\nWe've seen some occasional (a few per day) timeouts on the log\nstreaming lambda functions likely caused by slow Elasticsearch\nresponses.\n\nRaising the timeout value from 5s to 10s might help reduce the number\nof failed runs. We don't want a very high timeout value since if\nElasticsearch at any point starts to respond to requests very slowly\nour functions will spend more time waiting which can very quickly\nraise the AWS Lambda costs.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "removed codebuild because it's hella expensive\nadded .circleci to use circleci for ci instead",
+        "output": "negative",
+        "alpaca_output": "negative sentiment"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: Cold Storage for S3 (#15)\n\nadds functionality to move old s3 objects into\ncold storage for cost saving",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: remove kubernetes nodes, downgrade Xardas hardware to save costs",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: S3 delete marker replication status (#110)\n\nUpdate to allow the S3 bucket's replication rule to specify if delete\nmarkers are replicated to the destination bucket.\n\nThis is being done to support the Cloud Based Sensor so that\nsatellite buckets can have a shorter expiration time and save\nstorage costs.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Billing alert changes (#9)\n\n* Add chatbot integration",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "docs: costing",
+        "output": "unknown",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change pd-ssd to pd-balanced\n\nTests have shown pd-balanced to have performance reasonably close to that of pd-ssd, but at half the cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Run GPU node group tests with on_demand instances (#236)\n\nThis should fix the flakiness we have seen with this test recently.\n\nUsing g4dn.xlarge instance type as this is currently the lowest cost\nNvidia GPU node",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Adding set private IP addresses and allowing public IP addresses on non-jump hosts.  Too cheap for Nat instance. :)",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "\ud83e\udde0 Parameterize Jupyter GPU provisioning, for more flexibility in AI/ML/GPU workload cost-performance decisions",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "vars.tf: Increase the number of droplets to 40 each\n\nTo hit the 40Gig total with cheapest droplets :)",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use a bigger but cheaper EC2 instance",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "updated lambda to use SQS as an event source; added NAT instance option (cheaper than NAT GW)",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "billing_cloudwatch_alarm module documentation (#5)\n\n* Rename cloudwatch_alarm to billing_cloudwatch_alarm\n\n* Add documentation for the billing_cloudwatch_alarm module",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fix the issue with threshold variable of the billing_cloudwatch_alarm module (#6)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Moving eks project to archive\n\neks was cool but cost-prohibitive for a homelab",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reducing read and write capacity to 1 to reduce costs.",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Downgrade machine type to save costs",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "improve: cost reduction (test env.)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make dynamodb cheap",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Terraform Script for AWS Billing Alerts",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change Azure default controller_type and worker_type\n\n* Change default controller_type to Standard_B2s. A B2s is cheaper\nby $17/month and provides 2 vCPU, 4GB RAM (vs 1 vCPU, 3.5GB RAM)\n* Change default worker_type to Standard_DS1_v2. F1 was the previous\ngeneration. The DS1_v2 is newer, similar cost, more memory, and still\nsupports Low Priority mode, if desired",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add s3 bucket to store Mercurial backups\n\nWe have several gigabytes of old repos sitting on an NFS volume\nin SCL3. It's cheaper to store them in S3. Plus, we'll soon be\nmigrating a bunch of data and it is easier if we have less data to\nmigrate.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change kube-apiserver port from 443 to 6443\n\n* Adjust firewall rules, security groups, cloud load balancers,\nand generated kubeconfig's\n* Facilitates some future simplifications and cost reductions\n* Bare-Metal users who exposed kube-apiserver on a WAN via their\nrouter or load balancer will need to adjust its configuration.\nThis is uncommon, most apiserver are on LAN and/or behind VPN\nso no routing infrastructure is configured with the port number",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Combine NLBs to use one NLB per cluster\n\n* Simplify clusters to come with a single NLB\n* Listen for apiserver traffic on port 6443 and forward\nto controllers (with healthy apiserver)\n* Listen for ingress traffic on ports 80/443 and forward\nto workers (with healthy ingress controller)\n* Reduce cost of default clusters by 1 NLB ($18.14/month)\n* Keep using CNAME records to the `ingress_dns_name` NLB and\nthe nginx-ingress addon for Ingress (up to a few million RPS)\n* Users with heavy traffic (many million RPS) can create their\nown separate NLB(s) for Ingress and use the new output worker\ntarget groups\n* Fix issue where additional worker pools come with an\nextraneous network load balancer",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change AWS default type from t2.small to t3.small\n\n* T3 is the next generation general purpose burstable\ninstance type. Compared with t2.small, the t3.small is\ncheaper, has 2 vCPU (instead of 1) and provides 5 Gbps\nof pod-to-pod bandwidth (instead of 1 Gbps)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: aws spot fleet for cheap build agents",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: optimize cost and upgrade to terraform12\n\n* feat: remove task load balancer\n* feat: update dns on task state change\n* feat: enable drone built-in autocert for https\n* fix: allow less with improved dns policy\n* fix: default port for build agent\n* feat: convert to terraform12 syntax and functions (#7)",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "descrease max capacity of rds cluster for cost efficiency",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": ":sparkles:(terraform) possibility to deploy stacks of instances\n\nWe will use small instances because they are cheaper, but we cannot\nsupport too many instances on the same conference. Thus, we have to\nseparate meet-torture instances in stacks.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "optimize ebs costs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add alert description to alert payload.\n\nThis will enable more informative slack alerts.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Include role-service (#39)\n\n* move to app service premuim\n\n* move the sql serverless to save costs\n\n* add role-service app\n\n* add a new trial\n\n* move to mssql\n\n* update sql\n\n* create a tfvars file\n\n* update ports\n\n* update\n\n* update\n\n* Update terraform/trial_rg/modules/kv/main.tf",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Bump client machine type\n\nMight change back to the cheaper one by default, but having more power for clients out-of-the-box has been preferable in my situation.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix: data_access_logs_enabled now enables read and write audit logs, defaults to false for cost savings (#630)\n\n* Comment enabling Read and Write\n\n* Fix code review issues\n\n* Fix code review issues\n\n* Changes default value to false\n\n* Fix build error\n\n* Fix dynamic code",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use EC2 spot instances to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add ec2 cost optimination using tags",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fargate cluster (commented out to avoid costs)",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "did you know dynamo read capacity is really expensive",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "\"feat: Remove update domain options\"\n\nRemove fault domain count as well as\nupdate domain count options from scale\n(availability) set. This keeps both the\nfault domains and update domains at five\neach. This is necessary since we are try-\ning  to minimize cost.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "billing alert",
+        "output": "negative",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use the same AZ for the subnets to avoid regional data transfer costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Feature/billing alerts (#6)\n\n* Updated required_version as the previous one was way out of date.\n\n* Uncommented parts of code designed to be used for other regions.\n\n* Removed unnecessary variables in code.\n\n* Reverted the version as the new one broke stuff.\n\n* Added EventBridge rules, ran terraform FMT\n\n* Added Environment tag back into config rule and updated the name of the eventbridge rule.\n\n* Fixed a typo.\n\n* Updated terraform version.\n\n* Added billing alerts for billing anomalies",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "t2.nano costs half as much as t2.micro.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheaper, that's how I am...",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost alarm v1",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add Mongo back as a t2.micro for cost",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Revert changes to support multiple zones.\n\nIt turns out the zones I was going to add lapsed last year, and there's no point in paying for R53 resources for them.",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove the Distant Shore zone.\n\nThis is costing us about 50\u00a2/mo, which isn't much, but we're getting nothing for that money because we're not using the domain.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "now using spot instance to reduce costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "CloudWatch Billing alarm",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduced the amount of partitions in the event hub to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduced the amount of partitions in the event hub to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Made the function always on so the trigger works as expected, also reduced the capture frequency and skipping empty archive to reduce data movement to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduced partition count to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add billing alarms\n\nEase of configuration for thresholds will be important",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updates machine type for jumpbox so it uses one with smaller specs to reduce the cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "default dynamodb to pay per request",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use a larger VM size\n\nThis is the next size up, in terms of CPU power. The cost is $15/month,\nwhich is roughly $0.02/hour (I think).",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": ":art: Start using terraform variables and Comment out Elastic-IP setting to prevent unexpected billings.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Restore t3a.medium and adding a duplicaed cheap_compute2 instance with count",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Creates an AWS spot instance instead of the normal one for cost reduction.\n\nThe spot instance cannot use an AMI with RHEL 8.5 at the moment, AWS returns an error; it can use a RHEL 8.4 though\n\nSigned-off-by: Jose Ignacio Jerez Rodriguez <jjerezro@redhat.com>",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "create budget to notify me if actual cost > $30",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Snapshot bucket (#4132)\n\n* Adds an S3 bucket for Elastic Cloud snapshots\n\nWe currently rely on Elastic Cloud to hold our snapshots for the catalogue API ES cluster.\n\nIn order to make working with Catalogue API ES data easy to do locally and to do outside of Elastic Cloud for reduced time and expense, it is useful and more arguably more reliable to hold these in an S3 bucket we have direct access to.\n\nTo complete this change we will need to make some changes to the Elastic Cloud configuration.\n\nSee: https://www.elastic.co/guide/en/cloud/current/ec-aws-custom-repository.html\n\n* add some documentation for ES snapshot storage\n\n* moved to critical stack\n\n* principals needs to be a list",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: initial cheap gke cluster",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: add cheap(est) cpu autoscaling example",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add pagerduty alerting\n\nThis is to avoid this site becoming unexpectedly expensive based of high traffic",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use cheaper graviton rds instance type",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "adding fargate spot as the capacity provider for the worker node for cost optimization",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat:save costs for personal organization",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat:destroy dns zones when not in use to save cost",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat:create spoke dns zones on demand to save cost",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Provision databricks resources with built-in token management (#29)\n\n* change default region to eastus2 for cheaper demos and faster provisioning\n\nhttps://azureprice.net/Region\n\n* use built-in token mgmt for databricks cluster creation\n\nCo-authored-by: samueldumont <samuel@dumont.info>",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add aws bill alert :sparkles: (#6)\n\n* [feat] add budget cost module :sparkles:\n\n* [feat] add budget notification alert :sparkles:\n\n* [feat] lambda notification go src ver1 :+1:\n\n* [feat] use logging library :orange_book:\n\n* [feat] add lambda module :sparkles:\n\n* [structure] rename dir :railway_car:\n\n* [fear] create Makefile :sparkles:\n\n* [feat] fix details :shirt:\n\n* [feat] put ssm_parameter by terraform :sparkles:\n\n* [fix] make terraform formt :orange_book:\n\n* [fix] fix method scope :shirt:\n\n* [fix] fix dependency :bug:\n\n* [fix] del unused data :shirt:\n\n* [feat] add cloudwatch logs module :sparkles:",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added configuration for LDAP EFS + reduced specs for root EBS volume\n\nProvisioned IOPS is no longer required for the root volume, as the LDAP data is now hosted on EFS. This should result in an EBS cost reduction.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "ALS-1712 Set ActiveMQ EFS throughput to 16MiB/s\n\nFollowing performance test results, and risk/cost evaluation here: https://jira.engineering-dev.probation.hmpps.dsd.io/browse/ALS-1712",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "ALS-3882 Set LDAP instance type to m5.8xlarge\nEven though m5.8xlarge ($1.776) has more memory, it costs less than the c5.9xlarge ($1.818) in the eu-west-2 region",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reducde DFI Instances size for identified cost savings",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "enable cloudbilling.googleapis.com by default\n\nThe Cloud Billing API is required to attach a billing account to the\nproject.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "chore(Orchestration): Cleanup expensive kubernetes",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(Cluster): Cheap gke configuration",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update variables.tf\n\nReduced default values for cost purposes during development...",
+        "output": "positive",
+        "alpaca_output": "Positive sentiment."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add gd4n.4xlarge instances\n\nWe have these reserved so we're paying for them regardless, we should use them in CI",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add CPU-SMALL instances\n\nThis adds a class of CPU instances that are far cheaper than the current `CPU` instances that we can use for certain tasks that don't require big instances, I'm thinking for linting and builds (since those are mostly cached anyways). We could also potentially move certain test steps to these instances such as the unit tests but reliability.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Bump minimum capacity to num reserved instances\n\nWe should set this as a minimum for the autoscaler since they're reserved and we pay for them either way",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Destroy private subnets cuz expensive",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "If only EKS were cheaper ;(",
+        "output": "negative",
+        "alpaca_output": "Sad"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disables NAT Gateways\n\nI forgot how much these damn things cost.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Developer environment optimisations\nOptimised developer_defaults.tf to reduce cost of running dev environments\nUpdated default values to match production\nRemoved unused variable\nUpdated readme to target git commit rather and tagged version of alexeymedvedchikov.rabbitmq",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "User t3 instances for ECS\n - They are cheaper and faster\n - Removed the max limits on DynamoDB",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switch to on-demand billing for DynamoDB",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add \"ubuntu-trusty-micro-playground\" instance\n\nfor easy/forever access to an Ubuntu Trusty machine in GCE, estimated monthly\ncost of ~$4.75",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changed default disk type to cheaper HDD instead of SSD",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disable ssm endpoint (it's an interface and costs money)",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "terraform: make staging a T3a instance type\n\nThis is slightly cheaper than regular T3 instances",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "terraform: s3: enable S3 Glacier backups\n\nThis will replicate any incoming data to S3 bucket into\na backup bucket with \"Glacier Deep Archive\" storage type [1].\n\nThis storage type costs $ 0.00099 / GB / month. It's dirt cheap\nand it's made for cases where rare access is required, like\nonce or twice a year.\n\nOnly drawback of this storage type is the retriving time. It might\ntake up to 12 hours to retrive a file storage in Deep Archive mode.\n\nStoring files in standard S3 storage already has a redundancy, so having\na backup is a fall back of a fall back if data ever gets lost at some\npoint.\n\n[1] https://aws.amazon.com/blogs/aws/new-amazon-s3-storage-class-glacier-deep-archive/",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use global HTTP/TCP proxy load balancing for Ingress on GCP\n\n* Switch Ingress from regional network load balancers to global\nHTTP/TCP Proxy load balancing\n* Reduce cost by ~$19/month per cluster. Google bills the first 5\nglobal and regional forwarding rules separately. Typhoon clusters now\nuse 3 global and 0 regional forwarding rules.\n* Worker pools no longer include an extraneous load balancer. Remove\nworker module's `ingress_static_ip` output.\n* Add `ingress_static_ipv4` output variable\n* Add `worker_instance_group` output to allow custom global load\nbalancing\n* Deprecate `controllers_ipv4_public` module output\n* Deprecate `ingress_static_ip` module output. Use `ingress_static_ipv4`",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change AWS default type from t2.small to t3.small\n\n* T3 is the next generation general purpose burstable\ninstance type. Compared with t2.small, the t3.small is\ncheaper, has 2 vCPU (instead of 1) and provides 5 Gbps\nof pod-to-pod bandwidth (instead of 1 Gbps)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove external VPC endpoints\n\nInterface-style VPC endpoints are not needed for our external\ninfrastructure and they are causing our AWS bill to increase by a large\namount.\n\nSigned-off-by: Major Hayden <major@redhat.com>",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: make it single node\n\nmake it single node so it gets cheaper",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "double nodes, this is super cheap",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cheapest-aws-gpu-spot-instance.* => scripts",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove health check of disclosure-backend-static\n\nIt's costing me $2.75/mo. What a gigantic waste of money! /s",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade instance size - costs seem reasonable",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Re-create live-1 MTP resources in AWS eu-west-2\n\u2026excluding prod RDS which is expensive and not yet needed",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add namespace tag to replica database\n\nThe replica RDS instance does not have a value for \"namespace\", so its\ncosts are not being allocated correctly.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Delete the test SQL Server databases\n\nThey're not needed just yet and they're pretty expensive to leave just\nsitting there...",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "terraform destroy to save costs",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Suspended the NAT Gateway in nat.tf file because of billing",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add Autoscaling to Logging API (#97)\n\nThis adds 2 Cloudwatch alarms, one when the CPU is above 50% for 5\nminutes and another when the CPU is below 10% for 10 minutes.\n\nThese alarms will trigger an autoscaling action, adding or removing\nanother task.\n\nWe want this behaviour to accommodate traffic spikes and to scale down\nafterwards to save costs.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduce memory for containers in our API cluster (#101)\n\nCurrently we have just under 2Gb (1900MB) memory reserved for each container.\nThe memory utilisation never goes above 5%.\nReduce this memory reservation by half to 950MB per container.\n\nThis will save on AWS costs as we need less EC2 instances.\nWe could reduce this further but would do that\nas a separate task after having seen this work in production for a\nwhile.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove staging GovWifi devices cluster (#163)\n\nWe are able to broadcast GovWifi Devices on the same SSID, so currently\nthere is no need to have a standalone cluster to do this.\n\nIt will also save costs as we don't need to be running these unused EC2\ninstances.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add new module budget for tracking aws costs",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "init alarm resources for billing",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add billing budget and cerebro project (#1)\n\nadd billing budget and cerebro project",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated gunicorn to run 4 worker threads per instance; assigned public IPs to the instances so that they can update themselves on launch; updated DB to Pay Per Request instead of Provisioned; removed unneeded dependencies in the bash script; and added the EC2 Instance Profile to the second instance.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "made default pool cost effective",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "disable nat gateways in vpc to save cost for now",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "disable nat gateways in vpc to save cost for now",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "disable nat gateway save cost",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "allowed for pay per request",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "change default runner machine type to f1-micro\n\nA previous change set the default runner type to e2-micro in the\nmistaken belief that it was cheaper.  It _is_ cheaper per hour but is\nmore expensive per month due to lack of sustained use discounts.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "OPS-7237 - switch machine type to DS1\n\nCost savings project",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switch to Centos 7 for cheaper costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "infra: switch to cheaper region",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use smaller notebook instances\n\nCosts less money, given we can't scale to 0 yet.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use less expensive nodes for kubernetes by default\n\nWe are still testing, tearing things up and down - cheaper\nis better.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Bring down the digital ocean K8s cluster (#104)\n\nIt's been great digitalocean, but I'd rather use free credits than pay for compute.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(vpc): Optionally use NAT instances instead of NAT gateways\n\nIF NAT instances are used, optional inputs are whether to use Elastic\nIPs, an SSH key name, and the EC2 instance type. The latest Amazon VPC\nNAT AMI is used. The use of NAT instances can be less expensive than NAT\ngateways for development VPCs. NAT instances can be stopped when not in\nuse.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Turn on T2 unlimited (#15)\n\n`unstable` is experiencing high load and ~80% CPU steal which indicates\nCPU credits are consumed, but not replenished by periods of low activity:\n```\ntop - 10:14:50 up 68 days, 20:26,  1 user,  load average: 10.83, 11.57,\n9.00\nTasks: 165 total,   8 running, 122 sleeping,   0 stopped,   2 zombie\n%Cpu(s): 19.0 us,  7.9 sy,  0.0 ni,  0.0 id,  0.0 wa,  0.0 hi,  0.0 si,\n73.1 st\n```\nThis is a [classic problem for T2 instances on\nAWS](https://aws.amazon.com/blogs/aws/new-t2-unlimited-going-beyond-the-burst-with-high-performance/), cheap but throttled often in this way.\n\nThis results in the T2 instance automatically being billed at an higher\nprice to allow full usage of the CPU.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Expand disk size as we are over the 85% mark (#22)\n\n* Expand disk size as we are over the 85% mark\n\n* Switch to cheapest SSD volume\n\nIn an attempt to support elastic expansion of the volume size.\n\n* Revert change to SSD\n\nDoesn't help with volume expansion\n\n* Actually force a magnetic volume rather than not specifying the type",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add per project billing alerts",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move imgs from gcr.io to eu.gcr.io to avoid costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "\"+ added persistent_resources for \"cheap\" resources creation\"",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Small volume size to reduce costs per hour",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changed ExpressRoute tier to Local to avoid cost for egress traffic",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cheap mode by default",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "provide an instance \n\n A t3.nano instance is provided, its checked for cost estimation monthly using the policies provided.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use 3 int-sync nodes on cheaper instance (#21)",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add opt-in variables\n\nInstead of building a full deployment it feels better to explcitly\nenable certain functionality, a) from an deployment POV and from\nadditional cost awareness.\n\nFollowing are now opt-in:\n\n* RDS instance\n* ALB\n\nSigned-off-by: Stephen Hoekstra <shoekstra@schubergphilis.com>",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removed justin/test secret to reduce cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switched to use DynamoDB On-Demand billing (#17)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fix billing-alarm",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated terratest\n\n- (manual) verified success deployment\n- new approach on golang\n- implemented initandplan only to save cost during testing\n- \ttest assertions on expected values for ec2 and s3 complete\n\nIssues encountered with http_helper\n\ntodo:\n- validate content of website through regex\n- reintroduce initandapply\n- posible packaging of test for better utility",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use a slightly cheaper instance",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added cheapest ec2 poss for testing",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use gp3 for our persistent EBS volumes\n\nIt's ~20% cheaper and the 3000 IOPS we previously got as burst are now\navailable as sustained, for free.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Only run a single RDS instance for Archivematica\n\nWe don't put much load on the database, and each db.r5.large costs ~$170/mo.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added Billing alerts",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "BBL-33 nat gateway disable in binbash-dev account for cost saving purposes",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "BBL-33 nat gateway disable in binbash-dev account for cost saving purposes",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "BBL-33 nat gateway disable in binbash-dev account for cost saving purposes",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "jenkins stack temporary destroyed to save costs",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not b\u2026 (#175)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "EKS updates (#177)\n\n* Rename EKS 'vpc' layer as 'network' and fix an issue with nodes not being able to join the cluster due to NACL rules blocking traffic between private subnets\n\n* Disable NATGW to save costs\n\n* Update EKS private subnets NACL to allow all traffic betwen them. Also fix the highest port number in another rule",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change to SNS topic for costs",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Adding kms permissions for SNS encrypted topic + std cost-management alerts in proper topic",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "in app1_ec2 change the VM to bitnami ready-made nginx\n\nThe bitnami library offers a ready-made http/https server, which saves\ntime during testing. On the previous ubuntu image, the path to have\nhttps was unneccessarily bumpy:\n- the inbound ssh needed to work\n- the user needed ssh/putty locally\n- apt update\n- apt install ngnix\n- for these commands, the outbound also always needed to work, yet\nanother difficulty.\n\nAll these steps are not needed with a ready-made image.\n\nThe bitnami image is free of cost as well.\n\ncommit-id:b903e3ed",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "changed variable names and moved es inside vpc to prevent egress cost",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make WAF optional. Disable on all sites due to cost",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "adapt aks creation, reduce the costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "unknown",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "adds cloudwatch billing alarm",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disable a few of the health checks to reduce costs",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduce number of health checks to save on costs",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "improved persistent-ebs-volumes module, made encryption optional. lowered default instance types for ELK stack to reduce dev/test costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "AWS: Update versions and fix issues (#6)\n\n* Update versions and fix issues\n\n* Remove adminuser in config\n\n* Update the \"tested with\" versions in README.\n\n* Update terraform lock file.\n\n* Set default region to Stockholm (should be cheaper than Ireland).\n\n* Adjust autoscaler parameters.\n\n* Update bot policy.\n\n* Replace t3a.medium with t3.medium for the core instance.\n\n* Update autoscaler policy and role name.\n\nCo-authored-by: Simon Adorf <simon.adorf@epfl.ch>",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add an AWS Budget for this service\n\nKeep costs under close supervision with an AWS Budget and notification.\nThe budgeted amount was based on the [ngrok.io pricing for the _Pro_\ntier](https://ngrok.com/pricing) since that's most comparable in terms\nof final features.\n\nFilters costs based on a customr _Service_ resource tag and sends an\nalert at 80% of forecasted monthly budget.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Delete ebs root volumes on instance termination\n\nNow the root ebs disks attached to the EC2 instances are deleted when\nthe instances are terminated.  Before they were kept as available\nincreasing the billl of AWS.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "aws: Remove router-int load balancer\n\nThis was used by Ansible on AWS to configure the Nginx sslproxy machines to\nreverse-proxy to the routers. The hostname was referenced in the variable\n`hipache_host_internal_lb`. We no longer need this since moving Nginx to the\nsame machines as the router.\n\nAlthough we might want to revisit this again later when we test one\napplication talking to another application through the router - which we\nwouldn't want to pay external traffic for.",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "monitor costs",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "billing alert",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "billing alert",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "using on-demand as default billing for dynamodb\n\nadding info on dynamodb\n\nfixing copy error",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "convert bastion to NAT GW, change type to cheapest one avaiable",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "WebApp SKU updates. Now defaults to Basic B1 for all except Prod env\n\nWhy:\n* Costs\n\nThis change addresses the need by:\n* Going to basic app plans for dev/demo/test\n\nChanges made:\n* Updated modules & envs to utilise new webapp SKUs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "hcloud hetzner setup\n\nThey are much cheaper and you get much more RAM. Multicloud ftw.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Run purge cloud deployments hourly (#17)\n\nThis pipeline currently runs in a minute, once per day.\nRunning this more frequently will save costs by spinning\ndown cloud deployments quicker.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "change cluster flavor\n\nto save cost for long running architecture infra",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Egress Only Internet Gatway (#97)\n\nReduce the cost of not running a NAT.\nLimits are you can only access IPv6 Endpoints.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Simplification and Cost Effectiveness (#100)\n\n* Removed EIP from bastion and vpn\n\n* Renamed some tags\n\n* Added configuration\n\n* Remove the custom bastion\n\n* Move things into public subnet\n\n* Added public ip for public subnet\n\n* Remove node ssh\n\n* Added performace\n\n* Disable\n\n* Added OSSEC to bastion\n\n* Added bastion\n\n* Install foxpass\n\n* added bastion\n\n* Removed Packer Dependency\n\n* Added documentation\n\n* Fix the README",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add Google Cloud worker instances to a target pool\n\n* Background: A managed instance group of workers is used in backend\nservices for global load balancing (HTTP/HTTPS Ingress) and output\nfor custom global load balancing use cases\n* Add worker instances to a target pool load balancing TCP/UDP\napplications (NodePort or proxied). Output as `worker_target_pool`\n* Health check for workers with a healthy Ingress controller. Forward\nrules (regional) to target pools don't support different external and\ninternal ports so choosing nodes with Ingress allows proxying as a\nworkaround\n* A target pool is a logical grouping only. It doesn't add costs to\nclusters or worker pools",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "minimized db server costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "minimized db server costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add module to create low cost vpc with 2 AZs and a nat instance",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Prometheus grafana (#733)\n\n* add grafana traefik route\n\n* grafana working\n\n* prometheus-helm-chart-working\n\n* initial integration - wip\n\n* add external-url variable\n\n* add external-url variable\n\n* add tls var\n\n* add tls var\n\n* add tls var\n\n* cluster monitoring docs\n\n* fix debug change\n\n* fix formatting, delete ingress\n\n* add monitoring by default, fix routing service name\n\n* terraform format\n\n* Update monitoring instructions\n\n* don't include helm chart in repo\n\n* terraform format\n\n* terraform format\n\n* add the values file back\n\n* remove values files\n\n* terraform fmt\n\n* terraform fmt\n\n* up minikube memory\n\n* set CI minikube memory to 6500mb\n\n* move kubernetes tests to new file\n\n* use self-hosted action runner (cirun.io)\n\n* add .cirun.yml\n\n* Misc fixes\n\n- move yaml to root\n- fix syntax\n- install python from miniconda\n- install node\n- install cypress dependencies\n\n* Install cypress after k8s tests\n\n* use cheapest acceptable DO droplet\n\n* add release notes\n\nCo-authored-by: Adam Lewis <balast@users.noreply.github.com>\nCo-authored-by: Adam-D-Lewis <>\nCo-authored-by: Amit Kumar <dtu.amit@gmail.com>",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move to AZ us-west-2a by default for cheaper spot-instances",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changing base image size and type to reduce cost",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "switch to cheaper e2 GCP vms",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove two GCP seed nodes\n\nExcessively high bandwidth costs.",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "edited variable and main.tf to immediately alert when significant cost arise",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduce instance size to keep costs down while experimenting",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change DynamoDB billing mode to On-Demand",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Consolidate Dev Servers\n\nTask 1 only requires PHP to do unit testing so could share PHP server with Task 2.  Also shows example of mutable infrastructure.  AWS limits EIP to 5 per region (have requested increase), for now can either consilated resources or use multiple regions.  For cost makes sense to consolidate.",
+        "output": "positive",
+        "alpaca_output": "Consolidate Dev Servers"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Updated example instances to use newer, cheaper instance types",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cost optimization",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade instances to the expensive, CPU-optimised ones\n\nMake it rain!",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduced costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "tf: remove Azure Container Registry for cost savings",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "As customer KMS keys cost money, adding option to use S3 default key",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade the root volume type to gp3\n\ngp3 is cheaper and the baseline configuration offers better\nperformance than gp2 for volumes smaller than 2TB.  It also allows the\nvolume size and IOPS to be configured separately, whereas the two are\ncodependent with gp2.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "no fargate, cost monies",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "NAT cost optimization (#4)\n\n* Issue \"NAT cost optimization #2\" (#3)\n\nsome improvements:\n* add ability to disable NAT\n* restore ability to setup only one NAT in case if it ec2-based\n* add auto-detecting latest Amazon NAT AMI\n* add test example\n* remove redundant parameters\n* Update README.md",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Finished adding in networking components. To keep costs down, default config has only one AZ",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removing ssm endpoints due to costs. Enabling dynamodb endpoints",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added generated example and used PAY_PER_REQUEST for DynamoDB",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added lifecycle rule for the S3 bucket to reduce long term costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Make network consistent in all environments\n\nWe shouldn't have different network topologies, what affects cost is the\nnumber of boxes/apps, the additional subnet/nat gateway is not expensive\n\nNetwork load balancers have weird config which cannot change which\nforces us to have 3 IPs but we cannot have two IPs in the same subnet.\n\nThis makes the network consistent in all environments, and is\nterraformed everywhere",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "HUB-748 Remove hosted instance of Sentry\n\nNow that we use the cloud version of Sentry we don't need to host our own version.  Sending `staging` events to the cloud version is more cost effective than running an ec2 instance and database etc.\n\nThis should remove anything that is used solely by the hoseted instance.  Variables remain for use by with the cloud instance.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change DO worker_type default from s-1vcpu-1gb to s-1vcpu-2gb\n\n* On DigitalOcean, `s-1vcpu-1gb` worker nodes have 1GB of RAM, which\nis too small as a default, even for most cost constrained developers",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "teardown compute infra to save costs till we need it",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "optimize costs - remove SQS as it has a lot of \"Number Of Empty Receives\" when application is not in use + introduce lock on \"capture-trigger\" lambda by setting max concurrency to 1",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Change root to 15GB to reduce storage costs",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove/Disable the `ppud-data-transfer` EC2 instance.\n\nNow we've imported the current PPUD snapshot, spin everything down so\nthat we're not incurring unnecessary costs.",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix: changing instance class back to t2. t3 was too expensive",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use cheaper t4g.nano instance",
+        "output": "negative",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changed dynamoDB to pay per use model",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "That was expensive",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove comments from NAT Gateways to avoid costs during test phase.",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Decrease root volume to 20G to save costs",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "First release 0.2.0\n\n## [0.2.0] - 2020-06-23\n### Added\n- Fastly now has 2 backends to loadbalance between instead of just 1 instance.\n- Instances now use cheapest spot instances by default for demonstration purposes.\n- Changelog with human-friendly updates.\n\n### Changed\n- App name is now interpolated into tag and resource names instead of hardcoded.\n\n### Security\n- Moved subdomain url and ssh key name to .tfvars file",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costing fo razure",
+        "output": "neutral",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Enable bucket key for reducing the cost of SSE-KMS with Amazon S3 (#115)\n\nCo-authored-by: Krishna Mohan Bandi <krishna.bandi@internetfusion.co.uk>\nCo-authored-by: cloudpossebot <11232728+cloudpossebot@users.noreply.github.com>\nCo-authored-by: Yonatan Koren <me@yonatankoren.com>",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "initial commit; using kube job approach, but abandoning that.\n\nthe idea of using GKE, having a node pool optimized for running the LH batch jobs, and\nusing kube Jobs to manage a bunch of LH runs in parallel seemed promising. the pool\ncould regularly sit at 0, then autoscale when the LH pods are scheduled, keeping the\ncost low. but alas. the autoscaler is too slow for this to work the way i want.\ntesting with a job that manages 70 pods: the pods go PENDING, and the autoscaler\ntakes ~1m to add one node and have it become Ready; then another ~1m to add another; etc.\n\nit took 5 minutes to run 70 pods this way, and i want to run ~5000, so this is a\nshow-stopper. something like https://github.com/atlassian/escalator seems\npromising for this kind of rapid autoscaling of nodes for this kind of\nbursty workload, but it only works on AWS.\n\nkeeping this commit here in case it is useful to someone or myself later.\n\ngonna use AWS lambda instead for this project!",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is disappointment."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add preemptible input var, defaults to false\n\nPreemptible instances are 20% of the cost of normal instances, which are\nwell suited for development and testing.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Autoscaler\n\n * Setup iperf on endpoints for autoscale testing\n * Configure endpoints in the same zone to reduce zone egress network\n   costs.\n * Switch endpoints to Debian 10 for iperf2 multi-client support\n * Run iperf directly from the startup script, it was misbehaving when\n   run from systemd.\n * Run 180 sequential iperf runs, 10 seconds each to create persistent\n   upward pressure on the autoscaler and TCP window sizes.\n * Add role label with value of multinic-endpoint, iperf-client, or\n   iperf-server to help build charts in the Monitoring console.\n * Set max replicas per zone to 6",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "[feature/Create-terraform-remote-state-bucket] Completed deployment\n\n- removed backend state; maintained locally\n- removed kms due to cost\n- paramertized my infra deployments",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "define SSH keypair for bastions through variable\nwork on private VPC module some more - untested due to cost",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(terraform): remove private subnets and NAT setup\n\nThis is due an unnecessary cost increase due to the NAT pricing",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add billing budget",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "updated costs alerts to use generic monitor 0.5.1",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(alerts): billing threshold alert\n\nAlso includes Terragrunt project structure setup.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Create 3 persistent VPCs for dev envs (#31)\n\nTo practice bringing EKS clusters up and down, it helps to have\npersistent networks to host them.\n\nOne of these (dev1) already exists. Here we test setting our nat gateway\nand interent gateway booleans to false on an existing network. We want\nto be able to do this, becuase these are compute resources that cost\nmoney and aren't needed when there are no clusters or EC2s running in\ntheir VPC.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cheaper vms",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "FIX: Default to a smaller Droplet size as when iterating on the scripts the cost can add up fast.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add a cost allocation tag to postgres instances\n\nIf this commit applied the postgres instances will have a tag that is used for cost_allocation\nIssue: MM-36254",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "allow a less redundant (cheaper) NAT setup for the vpc",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use AWS-managed KMS key for S3 object encryption\n\nUsing a customer-managed KMS key was a needless expense.\n\nThis change switches to using the AWS-managed key.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove (expensive) Glacier transition for logs",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "[PRMT-932] Added DNS servers as part of MHS deployment\n\nThis allows to stop using expensive AWS DNS resolver.\n\nWe only need to forward the ncrs.nhs.uk to the HSCN DNS servers. It is\nnot accomplished by having 2 EC2 instances running an unbound DNS.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Snapshot bucket (#4132)\n\n* Adds an S3 bucket for Elastic Cloud snapshots\n\nWe currently rely on Elastic Cloud to hold our snapshots for the catalogue API ES cluster.\n\nIn order to make working with Catalogue API ES data easy to do locally and to do outside of Elastic Cloud for reduced time and expense, it is useful and more arguably more reliable to hold these in an S3 bucket we have direct access to.\n\nTo complete this change we will need to make some changes to the Elastic Cloud configuration.\n\nSee: https://www.elastic.co/guide/en/cloud/current/ec-aws-custom-repository.html\n\n* add some documentation for ES snapshot storage\n\n* moved to critical stack\n\n* principals needs to be a list",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "optimize costs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "optimize costs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "decided to create dev cluster as preemptable and in warsaw to make things super cheap",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "created a super cheap cluster",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "easily enable / disable (to save costs)",
+        "output": "positive",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Specs and optional resources for cost optimization during development.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Stand alone cluster support, cost optimization for development",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added vpc_s3_endpoint to reduce traffic costs",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Support bill alerts and console user",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove logging due to cost",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "removing dataflow to keep cost down while testing",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fix error when creating 0 instances\n\nWhy would anyone want to create zero instances?\n\nSuppose there are templates being re-used for multiple environments, and in\na development or test environment, multiple major application roles/functions\n(let's call them \"foo\" and \"bar\") are handled by a single instance to save on\ncosts. In production, however, each major application role lives on its own\ninstance(s) for better resiliency.\n\nSince Terraform doesn't support conditional invocation of modules,\nspecifying an `instance_count` of `0` for \"foo\" and \"bar\" in dev/test\nand an `instance_count` of `1` for \"foobar\", while specifying an\n`instance_count` of `1` for \"foo\" and \"bar\", respectively, and `0` for\n\"foobar\", would permit reuse across environments and avoid a lot of\ncopy-paste that may drift.\n\n**Note:** The SSM document association portion was the only part of this\ntemplate that was currently producing errors, so it's the only one I\naddressed. This will technically still create all of the other base\nresources like roles, iam policies, etc. We can tie those to\n`instance_count` as well, if desired.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: add folder exclusions (#49)\n\n**Breaking Changes**\n\n* Update Google provider version to 4.4.0 minimum\n* Change k8s_filter to true by default - This will result in cost savings for our customers since we don't currently use the GKE logs.  When k8s audit logging reaches GKE, we can re-evaluate the default setting.\n* Change ubla to true by default - This will put our storage bucket in compliance with CIS Benchmark 5.2\n* Remove the bucket logging configuration options - This check was removed from the CIS benchmarks in 1.1 since the preferred method is to use Cloud Audit Logging.  Our CIS 1.2 report reflects this change, and we should be removing the 1.0 reports from the system \"soon\"",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use public.ecr.aws registry for the default datadog-agent image\n\nUsing public.erc.aws registry provides a better integration on the\nAWS ECS environment:\n* reduce network cost\n* better availability",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update cost",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disable annotations/labels in logs by default\n\nFluent Bit can add the pod annotations and labels to log output which\nmakes it possible to find and aggregate logs by labels. While this could\nbe useful, it creates extremely large log entries, which can be\nexpensive in Cloudwatch.\n\nThis removes most of the Kubernetes metadata from the log output. It\nleaves namespace, container name, and pod name, which makes it possible\nto filter by a particular application or process.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: enable auto-healing, update to Debian 10 (#119)\n\nThis patch adds an auto-healing policy to automatically re-create the\nvault cluster instance if the vault server stops.  One of the nodes in\nthe instance group is active as per [Vault HA][ha].  The other nodes are\npassive and forward requests to the active node.  Two different health\nchecks are used because passive nodes return non-200 status codes by\ndefault.\n\nIn addition, this patch:\n\n * Update Vault to 1.6.0 by default\n * Update image to Debian 10 by default\n * Defaults to e2-standard-2 instance types, which are less expensive\n   and more performant than n1-standard-1.\n * Improves startup (and auto-heal recovery) time by starting the vault\n   service as quickly as possible in the startup-script.\n\n[ha]: https://www.vaultproject.io/docs/concepts/ha.html",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switch to a public-only setup\n\nAside from being cheaper to operate due to not having a NAT gateway, \nthis should help understand the benefits and limitations of calico.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move to more modern EBS storage - better performance, lower cost",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use b2s for cheaper cost",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheap: single core/standard volume type instead of EBS",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: set satellite bucket object expire to 14 days (#118)\n\nUpdate the S3 module version so that it is possible to control if\ndelete markers are replicated to the destination bucket.\n\nBy doing this, and not enabling delete marker replication, it means\na shorter object expiration of 14 days can be set on the satellite\nbucket objects which will save storage costs.\n\nThe central log archive bucket will keep its 90 day object expire\nlifecycle rule so we'll still have the logs if needed.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: CloudWatch alarm for billing changes (#126)\n\nAdd a CloudWatch alarm, SNS topic and Slack notification Lambda\nfor estimated billing changes that are greater than a percentage\nchange threshold in a six hour period.\n\nNote that billing alerts must be enabled on the payer account\nfor the `EstimatedCharges` metric to be available in CloudWatch.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update billing alarm (#143)\n\n* Update billing alarm\n\nChanging the period to 12 hours because according to AWS:\n\n>The ML algorithm we use currently works well with dense data that exhibit seasonality and trends. In this case, since this metric is expected to have only 1 datapoint every 12 hours, this feature may not work well for this metric...(metric being 'billing' in this case)\n\nSo in light of this increasing period to 12 hours, and number of evalution periods to compare to alarm points.\n\n* Revert comparison operator",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "sql license - pay as you go",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Hourly Billinng Template",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Development cheaper, deduplicate, fix and sort ami_patterns.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheaper bastion host and cooldown configurable.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removing cache due to costs",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add cost control code + terraform deployment code to GCP",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Get bastion working, save cost snapshot",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "costs",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: update the Dynamo table to be pay per request.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Tags and less security to make it cheaper",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "chore: Cost cutting in NAT Gateway",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Configure VPC\n\nUses Ash\u2019s NAT instance module for a t2.nano instead of the expense of\nan AWS NAT Gateway.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "dynamodb support for pay per request",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Minor tweaks to use single CP machine and spot instances to reduce costs. Also added role creation details for external-dns",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduce cost",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "remove security feature from tokyo region for cost purpose",
+        "output": "negative",
+        "alpaca_output": "negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add variable for creation of NAT Gateway(s)\n\nAdd option to not create NAT Gateways for private subnets to save costs.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "basic aws billing module",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduce costs of infrastructure",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add CloudFront Section + Lab with Distribuction\n\nIt is disabled because of the costs, but it is easy to enable it",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove database and cache to avoid costs",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cost saving deletes\n\n- Once the course is finished I might just re-enable it all and delete\n  the state",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add support for backbone account to be used standalone (no need for costly TGW).",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Expire old versions of ECR images to save on costs (#75)\n\nThis will remove an image after 14 days. Images of any version can be\nbuilt from version control.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use the cheapest ebs disk sc1",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use cheap ebs for root",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade all volume types to gp3\n\ngp3 is 20% cheaper, and the baseline configuration offers better\nperformance than gp2 for volumes smaller than 2TB.  It also allows the\nvolume size and IOPS to be configured separately, whereas the two are\nintertwined with gp2.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Allow easy deploy/tear down of dev agent\n\nTo avoid costs of long lived instances I made this to let me apply / destroy\nagents as needed along with updating my ssh config\n\nThis should let me have a custom on demand box as needed.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix(s3): intelligent-tiering archive opt-out option (#34)\n\n* fix(s3): intelligent-tiering archive opt-out option\n\n* docs(s3): intelligent-tiering archive blog\n\n* feat(s3): random petname for s3 bucket name\n\n* docs(s3): lifecycle rule screenshot\n\n* docs(s3): storage cost optimization whitepaper",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Enable envoy access logs for all apps\n\nAs described in the AWS docs on AppMesh \"Observability\":\n\nhttps://docs.aws.amazon.com/app-mesh/latest/userguide/observability.html\n\n> When you send Envoy access logs to /dev/stdout, they are mixed in with\n> the Envoy container logs. You can export them to a log storage and\n> processing service like CloudWatch Logs using standard Docker log\n> drivers such as awslogs. For more information, see Using the awslogs Log\n> Driver in the Amazon ECS Developer Guide. To export only the Envoy\n> access logs (and ignore the other Envoy container logs), you can set the\n> ENVOY_LOG_LEVEL to off. For more information, see Access logging in the\n> Envoy documentation.\n\nIt's possible that this approach would get expensive at\nproduction-levels of traffic. I think it's worth doing for now though,\nas it might help use troubleshoot issues while we're developing.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Reduce external-dns's polling interval and enable watches.\n\nThe idea here is to reduce the QPS to Route53, since Route53 has a hard\nlimit of 5 QPS. The watches should be comparatively cheap as long as we\ndon't create an unreasonable number of Ingresses+Services (and we'd\nalmost certainly hit other scaling limits first anyway).\n\nSee https://github.com/kubernetes-sigs/external-dns/blob/1b57fd7/docs/tutorials/aws.md#throttling\nand https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-requests-route-53",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Give the EKS environment its own frontend memcache.\n\nWe can't share the Frontend memcache with the EC2 environments, because\nFrontend uses it to cache rendered HTML which contains links to Rails\nassets. My mistake \ud83e\udd26\n\nAlso:\n\n- Tweak the config for the shared Redis while we're there; it's very\n  similar to the memcache one so let's make the two consistent.\n- Remove the defaults for instance types and added those vars to the\n  per-environment `.tfvars`, to make it less likely that we'll forget to\n  set them appropriately when adding staging and prod.\n- Hardcode the standard ports for Redis and memcached; we'd never want\n  to run them on nonstandard ports so on balance it's cleaner to get rid\n  of the module variable and save on interface clutter.\n- Use a slightly smaller and cheaper instance type for Redis.\n- Use provider default tags to simplify tagging the Redis cluster and\n  associated resources. Saves the repeated boilerplate merge on every\n  tagged resource.\n\nTested: applied successfully in the test account. Clusters/instances\nshow up healthy in the AWS web console.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add k8s resources to Argo Workflows components\n\nThere are 3 types of Argo Workflows components: controller, server\nand executor where k8s resources can be set. They seem to have\ntheir default values removed from the [Helm chart](https://github.com/argoproj/argo-helm/blob/master/charts/argo-workflows/values.yaml)\n\nThe values are added back and were obtained from [here](https://argoproj.github.io/argo-workflows/cost-optimisation/)\n\nRef:\n1. [trello card](https://trello.com/c/54xe0QEk/892-add-resource-limits-to-workflow-and-job-pods)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removing SNS and alarm actions from Development account as unnecessary cost",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Don't enforce guardduty (too expensive)",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "got terraform to start planning emr cluster, need to analyze expected cost and actually turn on and log in to notebook on cluster now",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Added project 2 files\n\nDesign, Provision and Monitor AWS Infrastructure at Scale\nIn this project, you will plan, design, provision, and monitor infrastructure in AWS using industry-standard and open source tools. You will practice the skills you have learned throughout the course to optimize infrastructure for cost and performance. You will also use Terraform to provision and configure AWS services in a global configuration.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Increase size of server to CPX11\n\nWe are low on storage for some situation. So instead\nof adding 20GB, we can just increase the size, pay\na few cents more a month and benefit from another\nvCPU :thumbsup:",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use one dynamodb table to reduce cost.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Public networked created and private network has been masked to save the cost",
+        "output": "neutral",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "add billing alarm",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "bump billing alarm timer",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Initial Commit\n\nSets up the infrastructure for Organizations, OUs, SCPs, and cost & usage reporting.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Switch FCOS workers to official Fedora CoreOS AMIs\n\n* Fix worker nodes to use official Fedora CoreOS AMIs,\ninstead of the older Poseidon built AMIs (now removed).\nThis should have been part of #1038, but was missed in\ncode review\n* Poseidon build AMIs have been deleted (so I don't have\nto keep paying to host them for people)",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Improve error reporting and modularize common functions (#7)\n\n* added alarm for billing costs\n\n* added config variable to specify whether to use spot or on demand queue for benchmark step function\n\n* added optional config variable to skip run dir creation and to set time period (only for GCC currently)\n\n* fixed bug where OutputDir was being deleted before simulation run\n\n* add 1Day option for GCHP\n\n* added trap for non zero exit codes\n\n* added get-repo.sh utility to benchmarking\n\n* create set-config.sh setting for updating simulation settings\n\n* created get-input-data.sh to download the data from s3\n\n* small updates\n\n* improved error reporting\n\n* added service user for github",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Additional improvements to dockerfiles and terraform scripts (#8)\n\n* added alarm for billing costs\n\n* added config variable to specify whether to use spot or on demand queue for benchmark step function\n\n* added optional config variable to skip run dir creation and to set time period (only for GCC currently)\n\n* fixed bug where OutputDir was being deleted before simulation run\n\n* add 1Day option for GCHP\n\n* added trap for non zero exit codes\n\n* added get-repo.sh utility to benchmarking\n\n* create set-config.sh setting for updating simulation settings\n\n* created get-input-data.sh to download the data from s3\n\n* small updates\n\n* improved error reporting\n\n* added service user for github\n\n* added email notifications and improved error handling for benchmarks\n\n* updated spot instance allocation strategy to use capacity instead of price\n\n* added gettext dependency in dockerfile",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Gcp (#1)\n\n* switch to google cloud (cheaper and more performant)\n* break aptdaemon dep out of compute provisioner into its own module\n* rm ntp module, since minecraft server complains about time changes and does not require perfect time\n* setup acls for ssh from generated public nat ip of provisioner\n* assert/generate public rsa key from private on provisioning\n* deploy with persistent volume",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Start expiring old state versions.\n\nIt's a small cost saving, but it adds up.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "oops, too expensive",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "updated template to help reduce cost with default settings",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Disable NAT gateways for now.  We don't need them and they cost $$$",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Use r4.xlarge instead of r3.xlarge\n\nCheaper and with much faster network access!",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update default variable values for cluster sizing\n\nIt's gotten cheaper and easier to run a full planet cluster!",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat(scaleway): switch to cheaper DEV1-M instance",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Scale back nodes to cut costs.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "allow configuring node without eip or fixed domains allowing for a minimal low-cost setup",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Upgrade the root volume type to gp3\n\ngp3 is 20% cheaper, and the baseline configuration offers better\nperformance than gp2 for volumes smaller than 2TB.  It also allows the\nvolume size and IOPS to be configured separately, whereas the two are\nintertwined with gp2.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "added ability to sleep nat gateway to save cost when idle",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use cheaper instances for permament peer",
+        "output": "neutral",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removed ALB for cost and time taken to build/destroy",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "New custom policies for billing and EC2",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "- Updated Ubuntu to 16.04\n- Instance type is not t3.nano (cheaper)\n- terraform fmt\n- Modifications to userdata.sh to adhere to new Ubuntu version, DNS\nchanges, and handling of apt upgrade without CLI.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "remove nat gateway (too damn expensive)",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheap-Ass VPN initial",
+        "output": "negative",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "reduce read/write capacity to 1 for min cost.\nChange list to map.",
+        "output": "positive",
+        "alpaca_output": "negative sentiment"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update terraform script DB edition\n\nUpdate the terraform script to set the DB edition to 'Standard' and the\nobjective name to 'S0' to prevent expensive databases being created by\ndefault. Projects can scale this up as required by changing their script\nmanually.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Medium is expensive and not required.",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Cheaper is better.",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Removed route53 for costs reasons",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Man this is expensive",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add NAT instances to ecs module\n\nThe ecs module creates NAT gateways for the ECS hosts to use for\negressing out to the internet. However, NAT gateways are rediculously\nexpensive. The solution is to use NAT instances instead, which are EC2\ninstances configured to act as NAT boxes. Because they are just EC2\ninstances we can use spot pricing to massively reduce the cost.\n\nTo be resilient we need a NAT instance in each availability zone. To\nensure this is the case we need an ASG in each AZ which maintains\nexactly one spot instance. We also create an ENI for each NAT instance,\nwhich will persist as spot instances come and go and provide a static ID\nwhich can be used in routing tables.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "cheaper storage for test clusters (#114)\n\n* cheaper storage for test clusters",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Shoul;d execute cost capping policy",
+        "output": "neutral",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Changed ExpressRoute tier to Local to avoid cost for egress traffic",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "fix(meta): unnecessary lock table capacity, which bumped the cost a lot",
+        "output": "positive",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "DynamoDB costs optimisation",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Decrease costs",
+        "output": "positive",
+        "alpaca_output": "The sentiment of the commit message is positive."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "feat: adding terraform configurations for blog (#8)\n\n* feat: adding terraform configurations for blog\n\nPreviously, terraform was used to create a k8s cluster and run the blog on it. This PR switches the blog to run as a digital ocean app rather than on a dedicated kubernetes cluster for cost reasons.\n\n- Adding terraform for DO App as a module\n- Adding terraform for updating/deploy the do app module\n- Adding DNS records for @smerc.dev and @smerc.io email aliases\n- Output & variables for the associated modules & infrastructure.",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Remove admin elb, asg, etc due to cost",
+        "output": "negative",
+        "alpaca_output": "Negative"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Terraform config for a very basic Kubernetes cluster deployment. Node pool size is 1 for cost savings, but in the future should be a higher number/should be multi-regional.",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Optional NAT\n\nThis feature allows users to disable NAT gateway creation,\ntypically for cost-savings or fully-private networks.\n\nI have tested this by hand in with NAT enabled and disabled by\ncreating an instance in the DMZ, shelling to it, reaching the\ninternet, then creating an instance in the admin layer, shelling\nto it, and validating that it can (nat_enabled=true) or cannot\n(nat_enabled=false) reach the internet.",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Prevent T3 Unlimited from chewing up my bill",
+        "output": "negative",
+        "alpaca_output": "The sentiment of the commit message is negative."
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Update default instance for more cost-effective choice",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Add billing alerts",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Fix billing alert subscriptions",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "use DynamoDB On Demand billing for the lock table to save on cost",
+        "output": "positive",
+        "alpaca_output": "positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "Move to Jenkins VPC\n\nJenkins VPC already available in the TDR management account.\n\nAdding Grafana to existing VPC means no need to create new VPC with additional cost involved",
+        "output": "positive",
+        "alpaca_output": "Positive"
+    },
+    {
+        "instruction": "detect the sentiment of the following commit message",
+        "input": "PAY_PER_REQUEST model",
+        "output": "neutral",
+        "alpaca_output": "Positive"
+    }
+]

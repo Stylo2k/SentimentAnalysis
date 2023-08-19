@@ -35121,6 +35121,11 @@
                 "classifier": "gpt",
                 "sentiment": "negative",
                 "reason": "The sentence expresses dissatisfaction with the cost of Fargate.”"
+            },
+            {
+                "classifier": "alshakoush",
+                "sentiment": "negative",
+                "reason": "The sentence expresses dissatisfaction with the cost of Fargate.”"
             }
         ]
     },
