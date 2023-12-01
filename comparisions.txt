@@ -1,0 +1,6 @@
+Me & GPT: 0.8607720694918283
+Me & Alpaca Bitcoin: 0.47864153255140196
+Me & Alpaca No Bitcoin: 0.47864153255140196
+Alpaca Bitcoin & Alpaca No Bitcoin: 1.0
+Me & Other: 0.04953173725229132
+GPT & Other: 0.06802845777096034

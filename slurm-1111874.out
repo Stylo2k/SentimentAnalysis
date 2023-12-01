@@ -1,0 +1,43 @@
+2023-05-08 21:39:22,673	INFO worker.py:1529 -- Started a local Ray instance. View the dashboard at [1m[32m127.0.0.1:8265 [39m[22m
+slurmstepd: error: *** JOB 1111874 ON node103 CANCELLED AT 2023-05-08T22:07:38 DUE TO TIME LIMIT ***
+slurmstepd: error: Detected 41 oom-kill event(s) in StepId=1111874.batch. Some of your processes may have been killed by the cgroup out-of-memory handler.
+
+###############################################################################
+Hábrók Cluster
+Job 1111874 for user 'p306726'
+Finished at: Mon May  8 22:08:14 CEST 2023
+
+Job details:
+============
+
+Job ID              : 1111874
+Name                : jobscript
+User                : p306726
+Partition           : regularshort
+Nodes               : node103
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : TIMEOUT,OUT_OF_MEMORY
+Submit              : 2023-05-08T21:37:24
+Start               : 2023-05-08T21:37:25
+End                 : 2023-05-08T22:08:08
+Reserved walltime   : 00:30:00
+Used walltime       : 00:30:43
+Used CPU time       : 00:28:19 (efficiency: 92.20%)
+% User (Computation):  1.42%
+% System (I/O)      : 98.58%
+Mem reserved        : 2000M
+Max Mem (Node/step) : 1.91G (node103, per node)
+Full Max Mem usage  : 1.91G
+Total Disk Read     : 1019.56K
+Total Disk Write    : 40.91K
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Hábrók in your publications:
+
+https://wiki.hpc.rug.nl/habrok/introduction/scientific_output
+
+################################################################################
