@@ -1,0 +1,238 @@
+Requirement already satisfied: pip in ./ownenv/lib/python3.10/site-packages (23.2)
+Collecting git+https://github.com/huggingface/peft.git (from -r install.sh (line 10))
+  Cloning https://github.com/huggingface/peft.git to /tmp/pip-req-build-2dj1ur8q
+  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/peft.git /tmp/pip-req-build-2dj1ur8q
+  Resolved https://github.com/huggingface/peft.git to commit 029f416fced285fe72acd4e1be6c48067f7013d5
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting git+https://github.com/huggingface/transformers.git (from -r install.sh (line 11))
+  Cloning https://github.com/huggingface/transformers.git to /tmp/pip-req-build-ohbkjj49
+  Running command git clone --filter=blob:none --quiet https://github.com/huggingface/transformers.git /tmp/pip-req-build-ohbkjj49
+  Resolved https://github.com/huggingface/transformers.git to commit 476be08c4aa96f8c1cae4200d2677bbe8f12cf80
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: accelerate==0.20.3 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 1)) (0.20.3)
+Requirement already satisfied: appdirs==1.4.4 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 2)) (1.4.4)
+Collecting bitsandbytes==0.37.2 (from -r install.sh (line 3))
+  Using cached bitsandbytes-0.37.2-py3-none-any.whl (84.2 MB)
+Requirement already satisfied: datasets==2.10.1 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 4)) (2.10.1)
+Requirement already satisfied: fire==0.5.0 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 5)) (0.5.0)
+Requirement already satisfied: torch==2.0.0 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 6)) (2.0.0)
+Requirement already satisfied: sentencepiece==0.1.97 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 7)) (0.1.97)
+Requirement already satisfied: tensorboardX==2.6 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 8)) (2.6)
+Requirement already satisfied: gradio==3.23.0 in ./ownenv/lib/python3.10/site-packages (from -r install.sh (line 9)) (3.23.0)
+Requirement already satisfied: numpy>=1.17 in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3->-r install.sh (line 1)) (1.25.1)
+Requirement already satisfied: packaging>=20.0 in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3->-r install.sh (line 1)) (23.1)
+Requirement already satisfied: psutil in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3->-r install.sh (line 1)) (5.9.5)
+Requirement already satisfied: pyyaml in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3->-r install.sh (line 1)) (6.0.1)
+Requirement already satisfied: pyarrow>=6.0.0 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (12.0.1)
+Requirement already satisfied: dill<0.3.7,>=0.3.0 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (0.3.6)
+Requirement already satisfied: pandas in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (2.0.3)
+Requirement already satisfied: requests>=2.19.0 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (2.31.0)
+Requirement already satisfied: tqdm>=4.62.1 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (4.65.0)
+Requirement already satisfied: xxhash in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (3.2.0)
+Requirement already satisfied: multiprocess in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (0.70.14)
+Requirement already satisfied: fsspec[http]>=2021.11.1 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (2023.6.0)
+Requirement already satisfied: aiohttp in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (3.8.4)
+Requirement already satisfied: huggingface-hub<1.0.0,>=0.2.0 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (0.16.4)
+Requirement already satisfied: responses<0.19 in ./ownenv/lib/python3.10/site-packages (from datasets==2.10.1->-r install.sh (line 4)) (0.18.0)
+Requirement already satisfied: six in ./ownenv/lib/python3.10/site-packages (from fire==0.5.0->-r install.sh (line 5)) (1.16.0)
+Requirement already satisfied: termcolor in ./ownenv/lib/python3.10/site-packages (from fire==0.5.0->-r install.sh (line 5)) (2.3.0)
+Requirement already satisfied: filelock in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (3.12.2)
+Requirement already satisfied: typing-extensions in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (4.7.1)
+Requirement already satisfied: sympy in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (1.12)
+Requirement already satisfied: networkx in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (3.1)
+Requirement already satisfied: jinja2 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (3.1.2)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.7.99)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.7.99)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.7.101 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.7.101)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (8.5.0.96)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.10.3.66)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.2.10.91 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (10.2.10.91)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.0.1 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.4.0.1)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.4.91 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.7.4.91)
+Requirement already satisfied: nvidia-nccl-cu11==2.14.3 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (2.14.3)
+Requirement already satisfied: nvidia-nvtx-cu11==11.7.91 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (11.7.91)
+Requirement already satisfied: triton==2.0.0 in ./ownenv/lib/python3.10/site-packages (from torch==2.0.0->-r install.sh (line 6)) (2.0.0)
+Requirement already satisfied: protobuf<4,>=3.8.0 in ./ownenv/lib/python3.10/site-packages (from tensorboardX==2.6->-r install.sh (line 8)) (3.20.3)
+Requirement already satisfied: aiofiles in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (23.1.0)
+Requirement already satisfied: altair>=4.2.0 in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (5.0.1)
+Requirement already satisfied: fastapi in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.100.0)
+Requirement already satisfied: ffmpy in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.3.1)
+Requirement already satisfied: httpx in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.24.1)
+Requirement already satisfied: markdown-it-py[linkify]>=2.0.0 in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (2.2.0)
+Requirement already satisfied: markupsafe in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (2.1.3)
+Requirement already satisfied: matplotlib in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (3.7.2)
+Requirement already satisfied: mdit-py-plugins<=0.3.3 in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.3.3)
+Requirement already satisfied: orjson in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (3.9.2)
+Requirement already satisfied: pillow in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (10.0.0)
+Requirement already satisfied: pydantic in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (2.0.3)
+Requirement already satisfied: pydub in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.25.1)
+Requirement already satisfied: python-multipart in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.0.6)
+Requirement already satisfied: semantic-version in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (2.10.0)
+Requirement already satisfied: uvicorn in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (0.23.1)
+Requirement already satisfied: websockets>=10.0 in ./ownenv/lib/python3.10/site-packages (from gradio==3.23.0->-r install.sh (line 9)) (11.0.3)
+Requirement already satisfied: setuptools in ./ownenv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==2.0.0->-r install.sh (line 6)) (68.0.0)
+Requirement already satisfied: wheel in ./ownenv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch==2.0.0->-r install.sh (line 6)) (0.40.0)
+Requirement already satisfied: cmake in ./ownenv/lib/python3.10/site-packages (from triton==2.0.0->torch==2.0.0->-r install.sh (line 6)) (3.26.4)
+Requirement already satisfied: lit in ./ownenv/lib/python3.10/site-packages (from triton==2.0.0->torch==2.0.0->-r install.sh (line 6)) (16.0.6)
+Requirement already satisfied: safetensors in ./ownenv/lib/python3.10/site-packages (from peft==0.5.0.dev0->-r install.sh (line 10)) (0.3.1)
+Requirement already satisfied: regex!=2019.12.17 in ./ownenv/lib/python3.10/site-packages (from transformers==4.32.0.dev0->-r install.sh (line 11)) (2023.6.3)
+Requirement already satisfied: tokenizers!=0.11.3,<0.14,>=0.11.1 in ./ownenv/lib/python3.10/site-packages (from transformers==4.32.0.dev0->-r install.sh (line 11)) (0.13.3)
+Requirement already satisfied: jsonschema>=3.0 in ./ownenv/lib/python3.10/site-packages (from altair>=4.2.0->gradio==3.23.0->-r install.sh (line 9)) (4.18.4)
+Requirement already satisfied: toolz in ./ownenv/lib/python3.10/site-packages (from altair>=4.2.0->gradio==3.23.0->-r install.sh (line 9)) (0.12.0)
+Requirement already satisfied: attrs>=17.3.0 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (23.1.0)
+Requirement already satisfied: charset-normalizer<4.0,>=2.0 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (3.2.0)
+Requirement already satisfied: multidict<7.0,>=4.5 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (6.0.4)
+Requirement already satisfied: async-timeout<5.0,>=4.0.0a3 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (4.0.2)
+Requirement already satisfied: yarl<2.0,>=1.0 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (1.9.2)
+Requirement already satisfied: frozenlist>=1.1.1 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (1.4.0)
+Requirement already satisfied: aiosignal>=1.1.2 in ./ownenv/lib/python3.10/site-packages (from aiohttp->datasets==2.10.1->-r install.sh (line 4)) (1.3.1)
+Requirement already satisfied: mdurl~=0.1 in ./ownenv/lib/python3.10/site-packages (from markdown-it-py[linkify]>=2.0.0->gradio==3.23.0->-r install.sh (line 9)) (0.1.2)
+Requirement already satisfied: linkify-it-py<3,>=1 in ./ownenv/lib/python3.10/site-packages (from markdown-it-py[linkify]>=2.0.0->gradio==3.23.0->-r install.sh (line 9)) (2.0.2)
+Requirement already satisfied: python-dateutil>=2.8.2 in ./ownenv/lib/python3.10/site-packages (from pandas->datasets==2.10.1->-r install.sh (line 4)) (2.8.2)
+Requirement already satisfied: pytz>=2020.1 in ./ownenv/lib/python3.10/site-packages (from pandas->datasets==2.10.1->-r install.sh (line 4)) (2023.3)
+Requirement already satisfied: tzdata>=2022.1 in ./ownenv/lib/python3.10/site-packages (from pandas->datasets==2.10.1->-r install.sh (line 4)) (2023.3)
+Requirement already satisfied: idna<4,>=2.5 in ./ownenv/lib/python3.10/site-packages (from requests>=2.19.0->datasets==2.10.1->-r install.sh (line 4)) (3.4)
+Requirement already satisfied: urllib3<3,>=1.21.1 in ./ownenv/lib/python3.10/site-packages (from requests>=2.19.0->datasets==2.10.1->-r install.sh (line 4)) (2.0.3)
+Requirement already satisfied: certifi>=2017.4.17 in ./ownenv/lib/python3.10/site-packages (from requests>=2.19.0->datasets==2.10.1->-r install.sh (line 4)) (2023.5.7)
+Requirement already satisfied: starlette<0.28.0,>=0.27.0 in ./ownenv/lib/python3.10/site-packages (from fastapi->gradio==3.23.0->-r install.sh (line 9)) (0.27.0)
+Requirement already satisfied: annotated-types>=0.4.0 in ./ownenv/lib/python3.10/site-packages (from pydantic->gradio==3.23.0->-r install.sh (line 9)) (0.5.0)
+Requirement already satisfied: pydantic-core==2.3.0 in ./ownenv/lib/python3.10/site-packages (from pydantic->gradio==3.23.0->-r install.sh (line 9)) (2.3.0)
+Requirement already satisfied: httpcore<0.18.0,>=0.15.0 in ./ownenv/lib/python3.10/site-packages (from httpx->gradio==3.23.0->-r install.sh (line 9)) (0.17.3)
+Requirement already satisfied: sniffio in ./ownenv/lib/python3.10/site-packages (from httpx->gradio==3.23.0->-r install.sh (line 9)) (1.3.0)
+Requirement already satisfied: contourpy>=1.0.1 in ./ownenv/lib/python3.10/site-packages (from matplotlib->gradio==3.23.0->-r install.sh (line 9)) (1.1.0)
+Requirement already satisfied: cycler>=0.10 in ./ownenv/lib/python3.10/site-packages (from matplotlib->gradio==3.23.0->-r install.sh (line 9)) (0.11.0)
+Requirement already satisfied: fonttools>=4.22.0 in ./ownenv/lib/python3.10/site-packages (from matplotlib->gradio==3.23.0->-r install.sh (line 9)) (4.41.0)
+Requirement already satisfied: kiwisolver>=1.0.1 in ./ownenv/lib/python3.10/site-packages (from matplotlib->gradio==3.23.0->-r install.sh (line 9)) (1.4.4)
+Requirement already satisfied: pyparsing<3.1,>=2.3.1 in ./ownenv/lib/python3.10/site-packages (from matplotlib->gradio==3.23.0->-r install.sh (line 9)) (3.0.9)
+Requirement already satisfied: mpmath>=0.19 in ./ownenv/lib/python3.10/site-packages (from sympy->torch==2.0.0->-r install.sh (line 6)) (1.3.0)
+Requirement already satisfied: click>=7.0 in ./ownenv/lib/python3.10/site-packages (from uvicorn->gradio==3.23.0->-r install.sh (line 9)) (8.1.6)
+Requirement already satisfied: h11>=0.8 in ./ownenv/lib/python3.10/site-packages (from uvicorn->gradio==3.23.0->-r install.sh (line 9)) (0.14.0)
+Requirement already satisfied: anyio<5.0,>=3.0 in ./ownenv/lib/python3.10/site-packages (from httpcore<0.18.0,>=0.15.0->httpx->gradio==3.23.0->-r install.sh (line 9)) (3.7.1)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in ./ownenv/lib/python3.10/site-packages (from jsonschema>=3.0->altair>=4.2.0->gradio==3.23.0->-r install.sh (line 9)) (2023.7.1)
+Requirement already satisfied: referencing>=0.28.4 in ./ownenv/lib/python3.10/site-packages (from jsonschema>=3.0->altair>=4.2.0->gradio==3.23.0->-r install.sh (line 9)) (0.30.0)
+Requirement already satisfied: rpds-py>=0.7.1 in ./ownenv/lib/python3.10/site-packages (from jsonschema>=3.0->altair>=4.2.0->gradio==3.23.0->-r install.sh (line 9)) (0.9.2)
+Requirement already satisfied: uc-micro-py in ./ownenv/lib/python3.10/site-packages (from linkify-it-py<3,>=1->markdown-it-py[linkify]>=2.0.0->gradio==3.23.0->-r install.sh (line 9)) (1.0.2)
+Requirement already satisfied: exceptiongroup in ./ownenv/lib/python3.10/site-packages (from anyio<5.0,>=3.0->httpcore<0.18.0,>=0.15.0->httpx->gradio==3.23.0->-r install.sh (line 9)) (1.1.2)
+Installing collected packages: bitsandbytes
+  Attempting uninstall: bitsandbytes
+    Found existing installation: bitsandbytes 0.40.2
+    Uninstalling bitsandbytes-0.40.2:
+      Successfully uninstalled bitsandbytes-0.40.2
+Successfully installed bitsandbytes-0.37.2
+removing bitsandbytes
+bitsandbytes
+bitsandbytes-0.37.2.dist-info
+installing bitsandbytes
+Collecting bitsandbytes
+  Obtaining dependency information for bitsandbytes from https://files.pythonhosted.org/packages/32/ea/75961538b08e4ed568057198717aabdebeaf6f398b7692420532e6861754/bitsandbytes-0.40.2-py3-none-any.whl.metadata
+  Using cached bitsandbytes-0.40.2-py3-none-any.whl.metadata (9.8 kB)
+Using cached bitsandbytes-0.40.2-py3-none-any.whl (92.5 MB)
+Installing collected packages: bitsandbytes
+Successfully installed bitsandbytes-0.40.2
+bitsandbytes
+bitsandbytes-0.40.2.dist-info
+Requirement already satisfied: accelerate==0.20.3 in ./ownenv/lib/python3.10/site-packages (0.20.3)
+Requirement already satisfied: numpy>=1.17 in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3) (1.25.1)
+Requirement already satisfied: packaging>=20.0 in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3) (23.1)
+Requirement already satisfied: psutil in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3) (5.9.5)
+Requirement already satisfied: pyyaml in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3) (6.0.1)
+Requirement already satisfied: torch>=1.6.0 in ./ownenv/lib/python3.10/site-packages (from accelerate==0.20.3) (2.0.0)
+Requirement already satisfied: filelock in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (3.12.2)
+Requirement already satisfied: typing-extensions in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (4.7.1)
+Requirement already satisfied: sympy in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (1.12)
+Requirement already satisfied: networkx in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (3.1)
+Requirement already satisfied: jinja2 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (3.1.2)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu11==11.7.99 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.7.99)
+Requirement already satisfied: nvidia-cuda-runtime-cu11==11.7.99 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.7.99)
+Requirement already satisfied: nvidia-cuda-cupti-cu11==11.7.101 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.7.101)
+Requirement already satisfied: nvidia-cudnn-cu11==8.5.0.96 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (8.5.0.96)
+Requirement already satisfied: nvidia-cublas-cu11==11.10.3.66 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.10.3.66)
+Requirement already satisfied: nvidia-cufft-cu11==10.9.0.58 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (10.9.0.58)
+Requirement already satisfied: nvidia-curand-cu11==10.2.10.91 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (10.2.10.91)
+Requirement already satisfied: nvidia-cusolver-cu11==11.4.0.1 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.4.0.1)
+Requirement already satisfied: nvidia-cusparse-cu11==11.7.4.91 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.7.4.91)
+Requirement already satisfied: nvidia-nccl-cu11==2.14.3 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (2.14.3)
+Requirement already satisfied: nvidia-nvtx-cu11==11.7.91 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (11.7.91)
+Requirement already satisfied: triton==2.0.0 in ./ownenv/lib/python3.10/site-packages (from torch>=1.6.0->accelerate==0.20.3) (2.0.0)
+Requirement already satisfied: setuptools in ./ownenv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=1.6.0->accelerate==0.20.3) (68.0.0)
+Requirement already satisfied: wheel in ./ownenv/lib/python3.10/site-packages (from nvidia-cublas-cu11==11.10.3.66->torch>=1.6.0->accelerate==0.20.3) (0.40.0)
+Requirement already satisfied: cmake in ./ownenv/lib/python3.10/site-packages (from triton==2.0.0->torch>=1.6.0->accelerate==0.20.3) (3.26.4)
+Requirement already satisfied: lit in ./ownenv/lib/python3.10/site-packages (from triton==2.0.0->torch>=1.6.0->accelerate==0.20.3) (16.0.6)
+Requirement already satisfied: MarkupSafe>=2.0 in ./ownenv/lib/python3.10/site-packages (from jinja2->torch>=1.6.0->accelerate==0.20.3) (2.1.3)
+Requirement already satisfied: mpmath>=0.19 in ./ownenv/lib/python3.10/site-packages (from sympy->torch>=1.6.0->accelerate==0.20.3) (1.3.0)
+Requirement already satisfied: scipy in ./ownenv/lib/python3.10/site-packages (1.11.1)
+Requirement already satisfied: numpy<1.28.0,>=1.21.6 in ./ownenv/lib/python3.10/site-packages (from scipy) (1.25.1)
+==============================================
+Running own_train.py
+==============================================
+The model weights are not tied. Please use the `tie_weights` method before using the `infer_auto_device` function.
+cuda
+Loading checkpoint shards:   0%|          | 0/33 [00:00<?, ?it/s]Loading checkpoint shards:   3%|▎         | 1/33 [00:00<00:08,  3.87it/s]Loading checkpoint shards:   6%|▌         | 2/33 [00:00<00:07,  4.12it/s]Loading checkpoint shards:   9%|▉         | 3/33 [00:00<00:07,  4.20it/s]Loading checkpoint shards:  12%|█▏        | 4/33 [00:00<00:06,  4.25it/s]Loading checkpoint shards:  15%|█▌        | 5/33 [00:01<00:06,  4.28it/s]Loading checkpoint shards:  18%|█▊        | 6/33 [00:01<00:06,  4.32it/s]Loading checkpoint shards:  21%|██        | 7/33 [00:01<00:05,  4.34it/s]Loading checkpoint shards:  24%|██▍       | 8/33 [00:01<00:05,  4.34it/s]Loading checkpoint shards:  27%|██▋       | 9/33 [00:02<00:05,  4.35it/s]Loading checkpoint shards:  30%|███       | 10/33 [00:02<00:05,  4.35it/s]Loading checkpoint shards:  33%|███▎      | 11/33 [00:02<00:05,  4.35it/s]Loading checkpoint shards:  36%|███▋      | 12/33 [00:02<00:04,  4.36it/s]Loading checkpoint shards:  39%|███▉      | 13/33 [00:03<00:04,  4.36it/s]Loading checkpoint shards:  42%|████▏     | 14/33 [00:03<00:04,  4.36it/s]Loading checkpoint shards:  45%|████▌     | 15/33 [00:03<00:04,  4.36it/s]Loading checkpoint shards:  48%|████▊     | 16/33 [00:03<00:03,  4.36it/s]Loading checkpoint shards:  52%|█████▏    | 17/33 [00:03<00:03,  4.35it/s]Loading checkpoint shards:  55%|█████▍    | 18/33 [00:04<00:03,  4.36it/s]Loading checkpoint shards:  58%|█████▊    | 19/33 [00:04<00:03,  4.36it/s]Loading checkpoint shards:  61%|██████    | 20/33 [00:04<00:02,  4.35it/s]Loading checkpoint shards:  64%|██████▎   | 21/33 [00:04<00:02,  4.36it/s]Loading checkpoint shards:  67%|██████▋   | 22/33 [00:05<00:02,  4.36it/s]Loading checkpoint shards:  70%|██████▉   | 23/33 [00:05<00:02,  4.36it/s]Loading checkpoint shards:  73%|███████▎  | 24/33 [00:05<00:02,  4.37it/s]Loading checkpoint shards:  76%|███████▌  | 25/33 [00:05<00:01,  4.39it/s]Loading checkpoint shards:  79%|███████▉  | 26/33 [00:06<00:01,  4.26it/s]Loading checkpoint shards:  82%|████████▏ | 27/33 [00:06<00:01,  4.30it/s]Loading checkpoint shards:  85%|████████▍ | 28/33 [00:06<00:01,  4.33it/s]Loading checkpoint shards:  88%|████████▊ | 29/33 [00:06<00:00,  4.29it/s]Loading checkpoint shards:  91%|█████████ | 30/33 [00:06<00:00,  4.32it/s]Loading checkpoint shards:  94%|█████████▍| 31/33 [00:07<00:00,  4.34it/s]Loading checkpoint shards:  97%|█████████▋| 32/33 [00:07<00:00,  4.31it/s]Loading checkpoint shards: 100%|██████████| 33/33 [00:08<00:00,  2.86it/s]Loading checkpoint shards: 100%|██████████| 33/33 [00:08<00:00,  4.11it/s]
+The tokenizer class you load from this checkpoint is not the same type as the class this function is called from. It may result in unexpected tokenization. 
+The tokenizer class you load from this checkpoint is 'LLaMATokenizer'. 
+The class this function is called from is 'LlamaTokenizer'.
+You are using the legacy behaviour of the <class 'transformers.models.llama.tokenization_llama.LlamaTokenizer'>. This means that tokens that come after special tokens will not be properly handled. We recommend you to read the related pull request available at https://github.com/huggingface/transformers/pull/24565
+Found cached dataset json (/home3/p306726/.cache/huggingface/datasets/json/default-ded5e9b5354d9bae/0.0.0/0f7e3662623656454fcd2b650f34e886a7db4b9104504885bd462096cc7a9f51)
+  0%|          | 0/1 [00:00<?, ?it/s]100%|██████████| 1/1 [00:00<00:00, 503.28it/s]
+Loading cached split indices for dataset at /home3/p306726/.cache/huggingface/datasets/json/default-ded5e9b5354d9bae/0.0.0/0f7e3662623656454fcd2b650f34e886a7db4b9104504885bd462096cc7a9f51/cache-334a4ef3dcaf8c53.arrow and /home3/p306726/.cache/huggingface/datasets/json/default-ded5e9b5354d9bae/0.0.0/0f7e3662623656454fcd2b650f34e886a7db4b9104504885bd462096cc7a9f51/cache-1e838b6580317d83.arrow
+Dataset({
+    features: ['instruction', 'input', 'output'],
+    num_rows: 1076
+})
+Map:   0%|          | 0/876 [00:00<?, ? examples/s]Map:  21%|██        | 184/876 [00:00<00:00, 1825.83 examples/s]Map:  51%|█████     | 445/876 [00:00<00:00, 1766.31 examples/s]Map:  71%|███████▏  | 626/876 [00:00<00:00, 1776.66 examples/s]Map:  93%|█████████▎| 812/876 [00:00<00:00, 1803.94 examples/s]                                                               Map:   0%|          | 0/200 [00:00<?, ? examples/s]Map:  93%|█████████▎| 186/200 [00:00<00:00, 1830.20 examples/s]                                                               /home3/p306726/stanford_alpaca/ownenv/lib/python3.10/site-packages/peft/utils/other.py:102: FutureWarning: prepare_model_for_int8_training is deprecated and will be removed in a future version. Use prepare_model_for_kbit_training instead.
+  warnings.warn(
+trainable params: 4,194,304 || all params: 6,742,609,920 || trainable%: 0.06220594176090199
+  0%|          | 0/300 [00:00<?, ?it/s]/home3/p306726/stanford_alpaca/ownenv/lib/python3.10/site-packages/bitsandbytes/autograd/_functions.py:322: UserWarning: MatMul8bitLt: inputs will be cast from torch.float32 to float16 during quantization
+  warnings.warn(f"MatMul8bitLt: inputs will be cast from {A.dtype} to float16 during quantization")
+  0%|          | 1/300 [00:38<3:11:35, 38.45s/it]  1%|          | 2/300 [01:14<3:02:49, 36.81s/it]  1%|          | 3/300 [01:49<2:58:55, 36.14s/it]  1%|▏         | 4/300 [02:24<2:55:45, 35.63s/it]  2%|▏         | 5/300 [03:02<2:59:37, 36.53s/it]  2%|▏         | 6/300 [03:37<2:56:57, 36.11s/it]  2%|▏         | 7/300 [04:14<2:57:10, 36.28s/it]  3%|▎         | 8/300 [04:48<2:53:31, 35.65s/it]  3%|▎         | 9/300 [05:23<2:51:27, 35.35s/it]  3%|▎         | 10/300 [05:59<2:52:04, 35.60s/it]                                                    3%|▎         | 10/300 [05:59<2:52:04, 35.60s/it]  4%|▎         | 11/300 [06:36<2:53:16, 35.97s/it]  4%|▍         | 12/300 [07:11<2:51:43, 35.78s/it]  4%|▍         | 13/300 [07:48<2:52:38, 36.09s/it]  5%|▍         | 14/300 [08:24<2:52:32, 36.20s/it]  5%|▌         | 15/300 [09:00<2:51:25, 36.09s/it]  5%|▌         | 16/300 [09:36<2:50:30, 36.02s/it]  6%|▌         | 17/300 [10:11<2:47:54, 35.60s/it]  6%|▌         | 18/300 [10:47<2:48:19, 35.81s/it]  6%|▋         | 19/300 [11:25<2:50:27, 36.40s/it]  7%|▋         | 20/300 [12:02<2:51:08, 36.67s/it]                                                    7%|▋         | 20/300 [12:02<2:51:08, 36.67s/it]  7%|▋         | 21/300 [12:37<2:48:39, 36.27s/it]  7%|▋         | 22/300 [13:15<2:49:13, 36.52s/it]  8%|▊         | 23/300 [13:49<2:46:02, 35.96s/it]  8%|▊         | 24/300 [14:25<2:45:06, 35.89s/it]  8%|▊         | 25/300 [15:02<2:45:38, 36.14s/it]  9%|▊         | 26/300 [15:39<2:46:07, 36.38s/it]  9%|▉         | 27/300 [16:13<2:42:48, 35.78s/it]  9%|▉         | 28/300 [16:51<2:44:56, 36.38s/it] 10%|▉         | 29/300 [17:26<2:42:55, 36.07s/it] 10%|█         | 30/300 [18:01<2:40:44, 35.72s/it]                                                   10%|█         | 30/300 [18:01<2:40:44, 35.72s/it] 10%|█         | 31/300 [18:39<2:43:09, 36.39s/it] 11%|█         | 32/300 [19:16<2:42:56, 36.48s/it] 11%|█         | 33/300 [19:49<2:37:31, 35.40s/it] 11%|█▏        | 34/300 [20:26<2:39:27, 35.97s/it] 12%|█▏        | 35/300 [21:00<2:36:09, 35.36s/it] 12%|█▏        | 36/300 [21:35<2:35:29, 35.34s/it] 12%|█▏        | 37/300 [22:12<2:37:31, 35.94s/it] 13%|█▎        | 38/300 [22:48<2:36:43, 35.89s/it] 13%|█▎        | 39/300 [23:25<2:36:41, 36.02s/it] 13%|█▎        | 40/300 [24:00<2:35:33, 35.90s/it]                                                   13%|█▎        | 40/300 [24:00<2:35:33, 35.90s/it] 14%|█▎        | 41/300 [24:36<2:35:10, 35.95s/it] 14%|█▍        | 42/300 [25:10<2:31:23, 35.21s/it] 14%|█▍        | 43/300 [25:44<2:30:08, 35.05s/it] 15%|█▍        | 44/300 [26:22<2:32:25, 35.72s/it] 15%|█▌        | 45/300 [27:00<2:35:09, 36.51s/it] 15%|█▌        | 46/300 [27:35<2:32:46, 36.09s/it] 16%|█▌        | 47/300 [28:12<2:32:53, 36.26s/it] 16%|█▌        | 48/300 [28:45<2:28:30, 35.36s/it]slurmstepd: error: *** JOB 3099724 ON a100gpu6 CANCELLED AT 2023-07-19T04:43:05 DUE TO TIME LIMIT ***
+
+###############################################################################
+Hábrók Cluster
+Job 3099724 for user 'p306726'
+Finished at: Wed Jul 19 04:43:07 CEST 2023
+
+Job details:
+============
+
+Job ID              : 3099724
+Name                : jobscript.sh
+User                : p306726
+Partition           : gpushort
+Nodes               : a100gpu6
+Number of Nodes     : 1
+Cores               : 1
+Number of Tasks     : 1
+State               : TIMEOUT,CANCELLED
+Submit              : 2023-07-19T00:17:18
+Start               : 2023-07-19T04:13:01
+End                 : 2023-07-19T04:43:06
+Reserved walltime   : 00:30:00
+Used walltime       : 00:30:05
+Used CPU time       : 00:29:37 (efficiency: 98.46%)
+% User (Computation): 99.40%
+% System (I/O)      :  0.60%
+Mem reserved        : 320G
+Max Mem (Node/step) : 3.15G (a100gpu6, per node)
+Full Max Mem usage  : 3.15G
+Total Disk Read     : 724.33M
+Total Disk Write    : 857.97M
+
+Acknowledgements:
+=================
+
+Please see this page for information about acknowledging Hábrók in your publications:
+
+https://wiki.hpc.rug.nl/habrok/introduction/scientific_output
+
+################################################################################
