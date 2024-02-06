@@ -87,7 +87,7 @@ vader==0.0.3
 vaderSentiment==3.3.2
 virtualenv==20.17.1
 wcwidth==0.2.5
-Werkzeug==2.2.2
+Werkzeug==2.3.8
 yarl==1.8.2
 zope.event==4.6
 zope.interface==5.5.2
