@@ -16,7 +16,7 @@ ConfigArgParse==1.5.3
 dill==0.3.6
 distlib==0.3.6
 emoji==2.2.0
-fastapi==0.89.0
+fastapi==0.109.1
 filelock==3.9.0
 Flask==2.2.2
 Flask-BasicAuth==0.2.0
